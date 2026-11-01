@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8fd0f7">
-<title>Absorb: Nothing evaporates. It just joins the pool.</title>
-<meta name="description" content="Absorb lets a fading coin merge into a living one, like two drops becoming one. Holders of both coins vote, the pools combine, and target holders swap into the host at a protected ratio.">
-<meta property="og:title" content="Absorb: Nothing evaporates. It just joins the pool.">
+<title>Merge: Nothing evaporates. It just joins the pool.</title>
+<meta name="description" content="Merge lets a fading coin merge into a living one, like two drops becoming one. Holders of both coins vote, the pools combine, and target holders swap into the host at a protected ratio.">
+<meta property="og:title" content="Merge: Nothing evaporates. It just joins the pool.">
 <meta property="og:description" content="A rescue protocol for meme coins. Holders vote, pools merge, communities keep flowing.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20256%20256%22%20width=%22256%22%20height=%22256%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22aq%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%235df2e0%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%230f9fc4%22/%3E%3C/linearGradient%3E%3ClinearGradient%20id=%22co%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%23ff9aa6%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%23ff4d6a%22/%3E%3C/linearGradient%3E%3Cfilter%20id=%22goo%22%20x=%22-20%25%22%20y=%22-20%25%22%20width=%22140%25%22%20height=%22140%25%22%3E%3CfeGaussianBlur%20stdDeviation=%228%22/%3E%3CfeColorMatrix%20values=%221%200%200%200%200%20%200%201%200%200%200%20%200%200%201%200%200%20%200%200%200%2024%20-10%22/%3E%3C/filter%3E%3C/defs%3E%3Cg%20filter=%22url%28%23goo%29%22%3E%20%20%3Cpath%20d=%22M92,61.0%20C101.9,87.39999999999999%20158,113.80000000000001%20158,160%20A66,66%200%200%201%2026,160%20C26,113.80000000000001%2082.1,87.39999999999999%2092,61.0%20Z%22%20fill=%22url%28%23aq%29%22/%3E%20%20%3Cpath%20d=%22M184,52.0%20C190.0,68.0%20224,84.0%20224,112%20A40,40%200%200%201%20144,112%20C144,84.0%20178.0,68.0%20184,52.0%20Z%22%20fill=%22url%28%23co%29%22/%3E%3C/g%3E%3Cellipse%20cx=%2268%22%20cy=%22140%22%20rx=%2211%22%20ry=%2220%22%20fill=%22%23fff%22%20opacity=%22.55%22%20transform=%22rotate%2818%2068%20140%29%22/%3E%3Cellipse%20cx=%22176%22%20cy=%22104%22%20rx=%226%22%20ry=%2211%22%20fill=%22%23fff%22%20opacity=%22.6%22%20transform=%22rotate%2818%20176%20104%29%22/%3E%3Cpath%20d=%22M30%20236%20Q128%20252%20226%20236%22%20fill=%22none%22%20stroke=%22%230f9fc4%22%20stroke-width=%227%22%20stroke-linecap=%22round%22%20opacity=%22.45%22/%3E%3C/svg%3E">
@@ -428,12 +428,12 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;cur
   </defs>
 </svg>
 
-<h1 class="sr">Absorb: nothing evaporates, it just joins the pool.</h1>
+<h1 class="sr">Merge: nothing evaporates, it just joins the pool.</h1>
 
 <!-- ROOM -->
-<main class="room" aria-label="Absorb deep">
+<main class="room" aria-label="Merge deep">
   <canvas id="stage" aria-hidden="true"></canvas>
-  <a class="room__brand" href="#/" aria-label="Absorb"><span class="mk" role="img" aria-hidden="true"></span><span>Absorb</span></a>
+  <a class="room__brand" href="#/" aria-label="Merge"><span class="mk" role="img" aria-hidden="true"></span><span>Merge</span></a>
   <div class="room__title" aria-hidden="true">
     <div class="ttl">Nothing<br>evaporates.<span>It just joins the pool.</span></div>
     <p>Got a coin that's drying up? Let it flow into a living one. Holders on both sides vote, and the whole community keeps its splash instead of fading out.</p>
@@ -441,7 +441,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;cur
   <button class="sound" id="sound" aria-pressed="false" aria-label="Turn sound on">Sound off</button>
   <div class="counter">Merged <b id="cnt">0</b></div>
   <ul class="keys" id="keys" aria-label="Pages">
-    <li><button class="key" data-go="absorb" style="--c:#8fe6e0">Drop in</button></li>
+    <li><button class="key" data-go="Merge" style="--c:#8fe6e0">Drop in</button></li>
     <li><button class="key" data-go="vote" style="--c:#ffe28a">Ripple</button></li>
     <li><button class="key" data-go="how" style="--c:#8fd0ff">How</button></li>
     <li><button class="key" data-go="board" style="--c:#ffb199">Pool</button></li>
@@ -454,9 +454,9 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;cur
 
 <!-- CHROME -->
 <header class="chrome" id="chrome">
-  <a class="brand" href="#/" aria-label="Back to the deep"><span class="mk" role="img" aria-hidden="true"></span><span>Absorb</span></a>
+  <a class="brand" href="#/" aria-label="Back to the deep"><span class="mk" role="img" aria-hidden="true"></span><span>Merge</span></a>
   <nav class="nav" id="nav">
-    <a href="#/absorb" data-r="absorb">Drop in</a>
+    <a href="#/Merge" data-r="Merge">Drop in</a>
     <a href="#/vote" data-r="vote">Ripple</a>
     <a href="#/how" data-r="how">How it works</a>
     <a href="#/board" data-r="board">Pool</a>
@@ -464,13 +464,13 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;cur
   <button class="wallet" id="wallet">Connect</button>
 </header>
 
-<!-- ABSORB TOOL -->
-<section class="page" data-page="absorb" id="page-absorb" aria-label="Absorb">
+<!-- Merge TOOL -->
+<section class="page" data-page="Merge" id="page-Merge" aria-label="Merge">
   <div class="main">
     <span class="label">Drop in</span>
     <h2 class="h"><span>One fading coin drops in.</span><span class="d">One living coin swells.</span></h2>
     <ol class="flow" id="flow"><li class="on"><i>1</i>Pick two coins</li><li><i>2</i>Check the terms</li><li><i>3</i>Holders vote</li></ol>
-    <p class="lede">Paste the target (the drying coin that joins) and the host (the living coin that takes it in). Absorb reads live market data and sets the terms.</p>
+    <p class="lede">Paste the target (the drying coin that joins) and the host (the living coin that takes it in). Merge reads live market data and sets the terms.</p>
 
     <form class="mt" id="form" autocomplete="off">
       <label class="field"><span class="field__l"><span>Target (drying coin)</span></span>
@@ -500,7 +500,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;cur
         <div class="coin" id="coinT"></div>
         <div class="viz">
           <svg viewBox="0 0 400 200" id="viz" aria-hidden="true"></svg>
-          <div class="viz__cap" id="vizCap">Absorbing</div>
+          <div class="viz__cap" id="vizCap">Mergeing</div>
         </div>
         <div class="coin" id="coinH"></div>
       </div>
@@ -536,7 +536,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;cur
     <div class="cur__hero">
       <span class="label">How it works</span>
       <h2 class="h"><span>Two drops,</span><span class="d">one pool.</span></h2>
-      <p class="lede">Absorb is Merge's rescue cousin. It isn't two equals combining: a smaller, drying coin flows into a stronger one, with protections for the host.</p>
+      <p class="lede">Merge is Merge's rescue cousin. It isn't two equals combining: a smaller, drying coin flows into a stronger one, with protections for the host.</p>
       <div class="how-anim">
         <svg viewBox="0 0 400 220" aria-hidden="true">
           <g filter="url(#goo)" fill="#38c6e6">
@@ -550,11 +550,11 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;cur
       <li class="cur__step"><span class="cur__n" style="--c:var(--mint)">1</span><div class="cur__card"><div class="step__t">Drop in</div><p class="step__d">Anyone proposes that a drying coin flow into a stronger one. The terms are computed from live market data.</p></div></li>
       <li class="cur__step"><span class="cur__n" style="--c:var(--butter)">2</span><div class="cur__card"><div class="step__t">Ripple</div><p class="step__d">Holders of both coins vote for 24 hours, weighted by on-chain token balance. Both sides need a majority and a quorum.</p></div></li>
       <li class="cur__step"><span class="cur__n" style="--c:var(--sky)">3</span><div class="cur__card"><div class="step__t">Merge</div><p class="step__d">The target's liquidity pours into the host's pool. Target holders swap into the host at the discounted ratio.</p></div></li>
-      <li class="cur__step"><span class="cur__n" style="--c:var(--peach)">4</span><div class="cur__card"><div class="step__t">Settle</div><p class="step__d">The target coin is retired and its page reads "absorbed into $HOST". The community keeps its identity and its water.</p></div></li>
+      <li class="cur__step"><span class="cur__n" style="--c:var(--peach)">4</span><div class="cur__card"><div class="step__t">Settle</div><p class="step__d">The target coin is retired and its page reads "Mergeed into $HOST". The community keeps its identity and its water.</p></div></li>
     </ol>
     <div class="cur__orbs">
       <div class="orb"><b>Swap discount</b>Target holders receive host tokens below the fair ratio, so existing host holders aren't diluted at full price.</div>
-      <div class="orb"><b>Vesting</b>Only a quarter of absorbed tokens unlock at execution. The rest trickle out linearly, so they can't all flood the host's pool on day one.</div>
+      <div class="orb"><b>Vesting</b>Only a quarter of Mergeed tokens unlock at execution. The rest trickle out linearly, so they can't all flood the host's pool on day one.</div>
       <div class="orb"><b>Size gate</b>A target can't exceed half of the host's market cap, so a host is never swallowed by something bigger.</div>
     </div>
     <div class="risk bottle"><span class="bottle__i">!</span><div><b>Be honest about the currents.</b> Someone could buy a dried-up coin cheap and push an absorption to dump on host holders. The discount, vesting, size gate and pre-proposal balance snapshots are the defenses. An absorption is a migration, not a guarantee the new tokens hold value.</div></div>
@@ -565,11 +565,11 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;cur
   <div class="main pool">
     <div class="pool__head">
       <span class="label">Pool</span>
-      <h2 class="h"><span>The pool of</span><span class="d">who got absorbed.</span></h2>
+      <h2 class="h"><span>The pool of</span><span class="d">who got Mergeed.</span></h2>
       <div class="stats stats--pearls" id="statsBoard"></div>
     </div>
     <div class="tabs tabs--seg" id="tabs">
-      <button class="tab on" data-t="absorbed">Merged</button>
+      <button class="tab on" data-t="Mergeed">Merged</button>
       <button class="tab" data-t="rejected">Rejected</button>
     </div>
     <div class="list pool__grid" id="listBoard"></div>
@@ -582,16 +582,16 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;cur
 <div class="cover" id="cover"><span>Diving in…</span><i class="bar"></i></div>
 <div class="wm" id="wm" role="dialog" aria-modal="true" aria-label="Connect a wallet"><div class="wm__c">
   <button class="wm__x" id="wmClose" aria-label="Close">&times;</button>
-  <h3>Connect a wallet</h3><p>Pick a Solana wallet. Absorb only reads your address and token balances, and asks you to sign messages for proposals and votes. It never moves funds.</p>
+  <h3>Connect a wallet</h3><p>Pick a Solana wallet. Merge only reads your address and token balances, and asks you to sign messages for proposals and votes. It never moves funds.</p>
   <div class="wm__l" id="wmList"></div></div></div>
 <div id="toast" role="status" aria-live="polite"></div>
 
 <script>
-window.ABSORB_CONFIG = {
+window.Merge_CONFIG = {
   rpc: "https://api.mainnet-beta.solana.com",   // Solana RPC used to read balances and supply (swap in your own for speed)
   quorum: 0.05,               // share of a coin's supply that must vote on each side
-  api: "",                    // e.g. "https://api.absorb.fun" -> POST /proposals
-  x: "https://x.com",         // replace with the Absorb X profile
+  api: "",                    // e.g. "https://api.Merge.fun" -> POST /proposals
+  x: "https://x.com/Merge_coiin,         // replace with the Merge X profile
   eyes: true,                 // set false to remove the blob's face
   sizeGate: 0.5,              // target market cap may be at most 50% of host
   dayOneUnlock: 0.25,
@@ -605,7 +605,7 @@ import { MarchingCubes } from 'three/addons/objects/MarchingCubes.js';
 
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
-const CFG = window.ABSORB_CONFIG || {};
+const CFG = window.Merge_CONFIG || {};
 const coverStart = performance.now();
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const short = a => a && a.length > 10 ? a.slice(0,4) + '…' + a.slice(-4) : (a || '');
@@ -615,7 +615,7 @@ const store = {
 };
 let toastT;
 function toast(t){ const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove('on'), 2600); }
-const openX = () => window.open(CFG.x || 'https://x.com', '_blank', 'noopener');
+const openX = () => window.open(CFG.x || 'https://x.com/Merge_coiin, '_blank', 'noopener');
 
 /* ================= SOUND (off by default) ================= */
 const Sound = (() => {
@@ -633,7 +633,7 @@ const Sound = (() => {
     get on(){ return on; },
     set(v){ on = v; if(v) ensure(); },
     blip(f = 640, d = .09, v = .05){ tone(f, d, v, 'sine', f*1.5); },
-    absorb(){ tone(300, .28, .09, 'sine', 700); tone(900, .14, .03, 'triangle'); },
+    Merge(){ tone(300, .28, .09, 'sine', 700); tone(900, .14, .03, 'triangle'); },
     chime(){ tone(523, .5, .05); setTimeout(() => tone(784, .6, .05), 80); }
   };
 })();
@@ -651,7 +651,7 @@ $('#sound').addEventListener('click', e => {
    ===================================================== */
 let running = true, sceneReady = false;
 const KEYDEFS = [
-  { go: 'absorb', label: 'DROP IN', tip: 'Get merge terms', col: '#8fe6e0' },
+  { go: 'Merge', label: 'DROP IN', tip: 'Get merge terms', col: '#8fe6e0' },
   { go: 'vote',   label: 'RIPPLE', tip: 'Open votes',       col: '#ffe28a' },
   { go: 'how',    label: 'HOW',    tip: 'How it works',     col: '#8fd0ff' },
   { go: 'board',  label: 'POOL',   tip: 'The record',       col: '#ffb199' },
@@ -995,7 +995,7 @@ async function buildRoom(){
         const dx = .5 - d.nx, dy = .5 - d.ny, dz = .5 - d.nz, dn = Math.hypot(dx, dy, dz) || 1e-3;
         const v = (.09 + (1 - Math.min(1, dn/.3))*.14)*dt;
         d.nx += dx/dn*v; d.ny += dy/dn*v; d.nz += dz/dn*v;
-        if(dn < .05){ drops.splice(i, 1); count++; $('#cnt').textContent = count; pulse = 1; tint = 1; tintCol.copy(d.dull); mass = Math.min(.012, mass + .0025); gulp = 1; burp(); ripple(0, 0, 1.15); Sound.absorb(); }
+        if(dn < .05){ drops.splice(i, 1); count++; $('#cnt').textContent = count; pulse = 1; tint = 1; tintCol.copy(d.dull); mass = Math.min(.012, mass + .0025); gulp = 1; burp(); ripple(0, 0, 1.15); Sound.Merge(); }
       }
     }
     tint *= Math.exp(-dt*1.6); blobMat.color.copy(TEAL).lerp(tintCol, tint*.7);
@@ -1175,7 +1175,7 @@ buildRoom().catch(err => { console.error(err); sceneReady = true; document.body.
 })();
 
 /* ================= ROUTER + KEYS ================= */
-const ROUTES = ['absorb','vote','how','board','p'];
+const ROUTES = ['Merge','vote','how','board','p'];
 let prevRoute = null;
 function route(){
   const r = location.hash.replace(/^#\/?/, '').split(/[?/]/)[0];
@@ -1245,7 +1245,7 @@ const WALLETS = [
   { id: 'coinbase', name: 'Coinbase Wallet', col: '#3b6cf6', url: 'https://www.coinbase.com/wallet/downloads', get: () => window.coinbaseSolana || null },
   { id: 'trust',    name: 'Trust Wallet', col: '#2e8ef7', url: 'https://trustwallet.com/download', get: () => window.trustwallet?.solana || null }
 ];
-let wallet = store.get('absorb-wallet', null);   // { addr, id }
+let wallet = store.get('Merge-wallet', null);   // { addr, id }
 let wProv = null;
 const walletDef = id => WALLETS.find(w => w.id === id);
 function paintWallet(){
@@ -1254,13 +1254,13 @@ function paintWallet(){
   b.classList.toggle('on', !!wallet);
 }
 function bindProvider(prov){
-  if(prov.__absorbBound) return; prov.__absorbBound = true;
+  if(prov.__MergeBound) return; prov.__MergeBound = true;
   prov.on?.('accountChanged', pk => {
-    if(pk){ wallet = { ...wallet, addr: pk.toString() }; store.set('absorb-wallet', wallet); }
-    else { wallet = null; store.set('absorb-wallet', null); }
+    if(pk){ wallet = { ...wallet, addr: pk.toString() }; store.set('Merge-wallet', wallet); }
+    else { wallet = null; store.set('Merge-wallet', null); }
     paintWallet(); renderBoard();
   });
-  prov.on?.('disconnect', () => { wallet = null; store.set('absorb-wallet', null); paintWallet(); renderBoard(); });
+  prov.on?.('disconnect', () => { wallet = null; store.set('Merge-wallet', null); paintWallet(); renderBoard(); });
 }
 async function connectWith(def){
   const prov = def.get();
@@ -1270,7 +1270,7 @@ async function connectWith(def){
     const pk = r?.publicKey || prov.publicKey;
     if(!pk) throw new Error('no key');
     wallet = { addr: pk.toString(), id: def.id }; wProv = prov; bindProvider(prov);
-    store.set('absorb-wallet', wallet); paintWallet(); renderBoard(); closeWalletModal(); toast(`${def.name} connected.`);
+    store.set('Merge-wallet', wallet); paintWallet(); renderBoard(); closeWalletModal(); toast(`${def.name} connected.`);
     return wallet;
   }catch(e){ toast(e?.code === 4001 || /reject|denied|cancel/i.test(e?.message || '') ? 'Connection cancelled.' : `Couldn’t connect ${def.name}.`); return null; }
 }
@@ -1304,7 +1304,7 @@ async function signAction(text){
 $('#wallet').addEventListener('click', async () => {
   if(wallet){
     try{ const pr = await activeProvider(); await pr?.disconnect?.(); }catch(e){}
-    wallet = null; wProv = null; store.set('absorb-wallet', null); paintWallet(); renderBoard(); toast('Disconnected.'); return;
+    wallet = null; wProv = null; store.set('Merge-wallet', null); paintWallet(); renderBoard(); toast('Disconnected.'); return;
   }
   openWalletModal();
 });
@@ -1312,14 +1312,14 @@ $('#wallet').addEventListener('click', async () => {
 addEventListener('load', async () => {
   if(!wallet){ paintWallet(); return; }
   const def = walletDef(wallet.id); const prov = def?.get();
-  if(!prov){ wallet = null; store.set('absorb-wallet', null); paintWallet(); return; }
+  if(!prov){ wallet = null; store.set('Merge-wallet', null); paintWallet(); return; }
   try{ const r = await prov.connect({ onlyIfTrusted: true }); wallet = { addr: (r?.publicKey || prov.publicKey).toString(), id: def.id }; wProv = prov; bindProvider(prov); }
-  catch(e){ wallet = null; store.set('absorb-wallet', null); }
+  catch(e){ wallet = null; store.set('Merge-wallet', null); }
   paintWallet(); renderBoard();
 });
 paintWallet();
 
-/* ================= ABSORB TOOL ================= */
+/* ================= Merge TOOL ================= */
 const fmtUsd = n => {
   if(!isFinite(n)) return '—';
   const a = Math.abs(n);
@@ -1378,7 +1378,7 @@ function paintTerms(){
   const x = computeTerms(T, Hs, disc, vest);
   lastTerms = { ...x, disc };
   $('#coinT').innerHTML = coinCard(T, 'target', ['Share of host', fmtPct(x.gate)]);
-  $('#coinH').innerHTML = coinCard(Hs, 'host', ['Dilution from absorb', fmtPct(x.dilution)]);
+  $('#coinH').innerHTML = coinCard(Hs, 'host', ['Dilution from Merge', fmtPct(x.dilution)]);
   $('#viz').innerHTML = vizSvg(T, Hs);
   $('#vizCap').textContent = `$${T.symbol} → $${Hs.symbol}`;
   $('#out').innerHTML = `
@@ -1443,10 +1443,10 @@ async function tokenBalance(owner, mint){
 
 /* ================= PROPOSALS (stored in this browser; mirrored to CFG.api when set) ================= */
 const QUORUM = CFG.quorum ?? .05, DAY = 86400000;
-let proposals = store.get('absorb-proposals', []);
+let proposals = store.get('Merge-proposals', []);
 if(!Array.isArray(proposals)) proposals = [];
 proposals = proposals.filter(p => !p.demo);
-if(!store.get('absorb-seeded', false)){
+if(!store.get('Merge-seeded', false)){
   const H = 3600000, now = Date.now(), SUP = 1e9;
   const C = (ca, name, symbol, mc, liq, price) => ({ ca, name, symbol, mc, liq, price, img: '', supply: SUP });
   const P = (id, t, h, disc, vest, startAgo, tv, hv, status) => ({ id, target: t, host: h, disc, vest, createdAt: now - startAgo, endsAt: now - startAgo + DAY,
@@ -1455,14 +1455,14 @@ if(!store.get('absorb-seeded', false)){
   proposals = [
     P(1001, C('Dr4gN1nj4Fr0gC01nTargetMint111111111111111111', 'Dead Frog', 'DFROG', 84000, 6200, .000084), C('PCatLiv1ngHostM1ntAddr2222222222222222222222', 'Pump Cat', 'PCAT', 1900000, 212000, .0019), .2, 7, 9*H, [88e6, 31e6], [102e6, 44e6], 'open'),
     P(1002, C('SkuIlInuTargetM1ntAddr333333333333333333333', 'Skull Inu', 'SKULL', 41000, 3100, .000041), C('M00nM0gHostM1ntAddr44444444444444444444444', 'Moon Mog', 'MMOG', 620000, 98000, .00062), .25, 10, 19*H, [64e6, 52e6], [71e6, 39e6], 'open'),
-    P(1003, C('R1ngB3llTargetM1ntAddr55555555555555555555', 'Ring Bell', 'RING', 52000, 4400, .000052), C('W1fHatHostM1ntAddr666666666666666666666666', 'Hat Dog', 'WIF2', 2400000, 310000, .0024), .15, 5, 52*H, [140e6, 22e6], [190e6, 41e6], 'absorbed'),
-    P(1004, C('B0nkJrTargetM1ntAddr7777777777777777777777', 'Bonk Jr', 'BONKJR', 97000, 8100, .000097), C('G1gaChadHostM1ntAddr88888888888888888888', 'Giga Chad', 'GCHAD', 3100000, 420000, .0031), .2, 7, 120*H, [160e6, 48e6], [230e6, 77e6], 'absorbed'),
+    P(1003, C('R1ngB3llTargetM1ntAddr55555555555555555555', 'Ring Bell', 'RING', 52000, 4400, .000052), C('W1fHatHostM1ntAddr666666666666666666666666', 'Hat Dog', 'WIF2', 2400000, 310000, .0024), .15, 5, 52*H, [140e6, 22e6], [190e6, 41e6], 'Mergeed'),
+    P(1004, C('B0nkJrTargetM1ntAddr7777777777777777777777', 'Bonk Jr', 'BONKJR', 97000, 8100, .000097), C('G1gaChadHostM1ntAddr88888888888888888888', 'Giga Chad', 'GCHAD', 3100000, 420000, .0031), .2, 7, 120*H, [160e6, 48e6], [230e6, 77e6], 'Mergeed'),
     P(1005, C('PepeSn0wTargetM1ntAddr99999999999999999999', 'Pepe Snow', 'PSNOW', 33000, 2500, .000033), C('F1reF1shHostM1ntAddr000000000000000000000', 'Fire Fish', 'FFISH', 880000, 120000, .00088), .3, 14, 200*H, [90e6, 38e6], [26e6, 71e6], 'rejected')
   ];
-  store.set('absorb-proposals', proposals); store.set('absorb-seeded', true);
+  store.set('Merge-proposals', proposals); store.set('Merge-seeded', true);
 }
 const snap = c => ({ ca: c.ca, name: c.name, symbol: c.symbol, mc: c.mc, liq: c.liq, price: c.price, img: c.img || '', supply: c.supply || 0 });
-const save = () => store.set('absorb-proposals', proposals);
+const save = () => store.set('Merge-proposals', proposals);
 const post = (path, body) => CFG.api ? fetch(CFG.api.replace(/\/$/, '') + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }) : Promise.resolve({ ok: true });
 
 $('#proposeBtn').addEventListener('click', async () => {
@@ -1481,7 +1481,7 @@ $('#proposeBtn').addEventListener('click', async () => {
       votes: { target: { yes: 0, no: 0 }, host: { yes: 0, no: 0 } }, voted: {}, status: 'open'
     };
     m.textContent = 'Approve the signature in your wallet…';
-    p.sig = Array.from(await signAction(`Absorb: propose $${p.target.symbol} (${p.target.ca}) into $${p.host.symbol} (${p.host.ca}). Discount ${(p.disc*100).toFixed(0)}%, vest ${p.vest} days. ${new Date(now).toISOString()}`).then(r => r.signature || r)).slice(0, 64);
+    p.sig = Array.from(await signAction(`Merge: propose $${p.target.symbol} (${p.target.ca}) into $${p.host.symbol} (${p.host.ca}). Discount ${(p.disc*100).toFixed(0)}%, vest ${p.vest} days. ${new Date(now).toISOString()}`).then(r => r.signature || r)).slice(0, 64);
     const r = await post('/proposals', p); if(!r.ok) throw new Error('Request failed.');
     proposals.unshift(p); save(); renderBoard(); setFlow(3);
     m.className = 'msg ok'; m.innerHTML = 'Proposed. The vote is open for 24 hours. <a href="#/vote" style="text-decoration:underline">View it</a>';
@@ -1490,7 +1490,7 @@ $('#proposeBtn').addEventListener('click', async () => {
 });
 
 /* ================= VOTE + BOARD ================= */
-let tab = 'absorbed';
+let tab = 'Mergeed';
 const pct = (a, b) => (a + b) ? a/(a + b) : 0;
 function clock(ms){
   if(ms <= 0) return '00:00:00';
@@ -1513,10 +1513,10 @@ function vesselHtml(p, side){
     <div class="vessel__m">Quorum ${fmtPct(qf, 0)} of ${fmtPct(QUORUM, 0)} supply · ${fmtNum(cast)} votes</div>${controls}</div>`;
 }
 function resolvedFoot(p){
-  return `<span>${p.status === 'absorbed' ? `$${esc(p.target.symbol)} is now absorbed into $${esc(p.host.symbol)}.` : 'Not enough support on both sides.'}</span><span>${new Date(p.resolvedAt || p.endsAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</span>`;
+  return `<span>${p.status === 'Mergeed' ? `$${esc(p.target.symbol)} is now Mergeed into $${esc(p.host.symbol)}.` : 'Not enough support on both sides.'}</span><span>${new Date(p.resolvedAt || p.endsAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</span>`;
 }
 function statusBadge(p){
-  return p.status === 'absorbed' ? '<span class="badge ok">Absorbed</span>' : p.status === 'rejected' ? '<span class="badge bad">Rejected</span>' : '<span class="badge">Voting</span>';
+  return p.status === 'Mergeed' ? '<span class="badge ok">Mergeed</span>' : p.status === 'rejected' ? '<span class="badge bad">Rejected</span>' : '<span class="badge">Voting</span>';
 }
 function voteHtml(p, full){
   const foot = p.status === 'open'
@@ -1535,7 +1535,7 @@ function pearlHtml(p){
   return `<article class="pearl ${p.status}"><a class="pearl__link" href="#/p/${p.id}" aria-label="Open $${esc(t.symbol)} into $${esc(h.symbol)}">
     <div class="pearl__orbs">${orb(t)}${orb(h)}</div>
     <div class="pearl__t">$${esc(t.symbol)} <span>→</span> $${esc(h.symbol)}</div>
-    <div class="pearl__m">${p.status === 'absorbed' ? fmtUsd(t.liq || 0) + ' liquidity joined · ' : ''}${(p.disc*100).toFixed(0)}% discount · ${p.vest}d vest</div>
+    <div class="pearl__m">${p.status === 'Mergeed' ? fmtUsd(t.liq || 0) + ' liquidity joined · ' : ''}${(p.disc*100).toFixed(0)}% discount · ${p.vest}d vest</div>
     <div class="pearl__f">${statusBadge(p)}<span>${d}</span></div></a>
     <div class="pearl__act"><button class="btn btn--g btn--s" data-share="${p.id}">Share</button><button class="btn btn--g btn--s" data-copy="${p.id}">Copy link</button></div></article>`;
 }
@@ -1544,11 +1544,11 @@ let boardReady = false;
 setTimeout(() => { boardReady = true; renderBoard(); }, 500);
 const linkFor = p => location.href.split('#')[0] + '#/p/' + p.id;
 function statsHtml(){
-  const ab = proposals.filter(p => p.status === 'absorbed'), op = proposals.filter(p => p.status === 'open');
+  const ab = proposals.filter(p => p.status === 'Mergeed'), op = proposals.filter(p => p.status === 'open');
   const liq = ab.reduce((s, p) => s + (p.target.liq || 0), 0);
-  return `<div class="stat"><b>${ab.length}</b><span>coins absorbed</span></div><div class="stat"><b>${fmtUsd(liq)}</b><span>liquidity rescued</span></div><div class="stat"><b>${op.length}</b><span>votes open now</span></div>`;
+  return `<div class="stat"><b>${ab.length}</b><span>coins Mergeed</span></div><div class="stat"><b>${fmtUsd(liq)}</b><span>liquidity rescued</span></div><div class="stat"><b>${op.length}</b><span>votes open now</span></div>`;
 }
-function emptyHtml(title, sub){ return `<div class="empty"><b>${title}</b>${sub}<br><a class="btn btn--p" href="#/absorb"><span>Start an absorption</span><span class="ar">&rarr;</span></a></div>`; }
+function emptyHtml(title, sub){ return `<div class="empty"><b>${title}</b>${sub}<br><a class="btn btn--p" href="#/Merge"><span>Start an absorption</span><span class="ar">&rarr;</span></a></div>`; }
 function renderBoard(){
   const skel = '<div class="skel"></div><div class="skel"></div>';
   $('#ruleQ').textContent = fmtPct(QUORUM, 0) + ' of supply must vote';
@@ -1557,7 +1557,7 @@ function renderBoard(){
   $('#listVote').innerHTML = !boardReady ? skel : open.length ? open.map(p => voteHtml(p)).join('') : emptyHtml('No open ripples right now', 'Every merge starts with a single drop. Be the first.');
   $$('#tabs .tab').forEach(t => t.classList.toggle('on', t.dataset.t === tab));
   const rows = proposals.filter(p => p.status === tab);
-  $('#listBoard').innerHTML = !boardReady ? skel : rows.length ? rows.map(p => pearlHtml(p)).join('') : (tab === 'absorbed' ? emptyHtml('Nothing has merged yet', 'Finished merges land in the pool.') : emptyHtml('No rejected proposals', 'Proposals that fail a vote show up here.'));
+  $('#listBoard').innerHTML = !boardReady ? skel : rows.length ? rows.map(p => pearlHtml(p)).join('') : (tab === 'Mergeed' ? emptyHtml('Nothing has merged yet', 'Finished merges land in the pool.') : emptyHtml('No rejected proposals', 'Proposals that fail a vote show up here.'));
   if(document.body.dataset.route === 'p'){
     const id = location.hash.split('/')[2], p = proposals.find(x => String(x.id) === id);
     $('#propBody').innerHTML = !boardReady ? skel : p ? propHtml(p, true) : emptyHtml('We can’t find that proposal', 'It may only exist in another browser.');
@@ -1565,10 +1565,10 @@ function renderBoard(){
 }
 function resolve(p){
   const ok = (s, c) => c.supply && (s.yes + s.no)/c.supply >= QUORUM && s.yes > s.no;
-  p.status = ok(p.votes.target, p.target) && ok(p.votes.host, p.host) ? 'absorbed' : 'rejected';
+  p.status = ok(p.votes.target, p.target) && ok(p.votes.host, p.host) ? 'Mergeed' : 'rejected';
   p.resolvedAt = Date.now(); save();
-  toast(p.status === 'absorbed' ? `$${p.target.symbol} was absorbed into $${p.host.symbol}.` : `Vote on $${p.target.symbol} failed.`);
-  if(p.status === 'absorbed') Sound.absorb();
+  toast(p.status === 'Mergeed' ? `$${p.target.symbol} was Mergeed into $${p.host.symbol}.` : `Vote on $${p.target.symbol} failed.`);
+  if(p.status === 'Mergeed') Sound.Merge();
   renderBoard();
 }
 $('#tabs').addEventListener('click', e => { const b = e.target.closest('.tab'); if(!b) return; tab = b.dataset.t; renderBoard(); });
@@ -1585,7 +1585,7 @@ let onListClick = async function(e){
     toast('Checking your balance…');
     const bal = await tokenBalance(wallet.addr, coin.ca);
     if(!(bal > 0)){ toast(`You don’t hold $${coin.symbol}, so you can’t vote on this side.`); return; }
-    await signAction(`Absorb vote: ${choice.toUpperCase()} on $${p.target.symbol} into $${p.host.symbol} as a ${side} holder (proposal ${p.id}).`);
+    await signAction(`Merge vote: ${choice.toUpperCase()} on $${p.target.symbol} into $${p.host.symbol} as a ${side} holder (proposal ${p.id}).`);
     if(p.status !== 'open') return;
     p.votes[side][choice] += bal; p.voted[key] = choice; p.voted[key + ':w'] = bal; save();
     post('/votes', { id: p.id, side, choice, addr: wallet.addr, weight: bal }).catch(() => {});
@@ -1598,7 +1598,7 @@ async function onShare(e){
   const b = sh || cp; if(!b) return false;
   const p = proposals.find(x => String(x.id) === (sh ? sh.dataset.share : cp.dataset.copy)); if(!p) return true;
   if(sh){
-    const txt = p.status === 'absorbed' ? `$${p.target.symbol} was absorbed into $${p.host.symbol}. Nothing evaporates.` : `Vote now: absorb $${p.target.symbol} into $${p.host.symbol}. Holders of both coins decide.`;
+    const txt = p.status === 'Mergeed' ? `$${p.target.symbol} was Mergeed into $${p.host.symbol}. Nothing evaporates.` : `Vote now: Merge $${p.target.symbol} into $${p.host.symbol}. Holders of both coins decide.`;
     window.open('https://x.com/intent/tweet?text=' + encodeURIComponent(txt) + '&url=' + encodeURIComponent(linkFor(p)), '_blank', 'noopener');
   } else {
     try{ await navigator.clipboard.writeText(linkFor(p)); toast('Link copied.'); }catch(err){ toast(linkFor(p)); }
@@ -1617,8 +1617,8 @@ setInterval(() => {
   proposals.filter(p => p.status === 'open' && p.endsAt <= now).forEach(resolve);
 }, 1000);
 
-const footHtml = `<footer class="foot"><nav><a href="#/absorb">Drop in</a><a href="#/vote">Ripple</a><a href="#/how">How it works</a><a href="#/board">Pool</a><a href="${esc(CFG.x || 'https://x.com')}" target="_blank" rel="noopener">X</a><a href="#/">Deep</a></nav><span>Absorb · nothing evaporates</span>
-<p>Absorb is a community tool, not financial advice. Token migrations carry risk and new tokens can lose value. Only vote with coins you are comfortable holding.</p></footer>`;
+const footHtml = `<footer class="foot"><nav><a href="#/Merge">Drop in</a><a href="#/vote">Ripple</a><a href="#/how">How it works</a><a href="#/board">Pool</a><a href="${esc(CFG.x || 'https://x.com')}" target="_blank" rel="noopener">X</a><a href="#/">Deep</a></nav><span>Merge · nothing evaporates</span>
+<p>Merge is a community tool, not financial advice. Token migrations carry risk and new tokens can lose value. Only vote with coins you are comfortable holding.</p></footer>`;
 $$('.page .main').forEach(m => m.insertAdjacentHTML('beforeend', footHtml));
 
 renderBoard();
