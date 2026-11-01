@@ -1,0 +1,1628 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#8fd0f7">
+<title>Absorb: Nothing evaporates. It just joins the pool.</title>
+<meta name="description" content="Absorb lets a fading coin merge into a living one, like two drops becoming one. Holders of both coins vote, the pools combine, and target holders swap into the host at a protected ratio.">
+<meta property="og:title" content="Absorb: Nothing evaporates. It just joins the pool.">
+<meta property="og:description" content="A rescue protocol for meme coins. Holders vote, pools merge, communities keep flowing.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20256%20256%22%20width=%22256%22%20height=%22256%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22aq%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%235df2e0%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%230f9fc4%22/%3E%3C/linearGradient%3E%3ClinearGradient%20id=%22co%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%23ff9aa6%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%23ff4d6a%22/%3E%3C/linearGradient%3E%3Cfilter%20id=%22goo%22%20x=%22-20%25%22%20y=%22-20%25%22%20width=%22140%25%22%20height=%22140%25%22%3E%3CfeGaussianBlur%20stdDeviation=%228%22/%3E%3CfeColorMatrix%20values=%221%200%200%200%200%20%200%201%200%200%200%20%200%200%201%200%200%20%200%200%200%2024%20-10%22/%3E%3C/filter%3E%3C/defs%3E%3Cg%20filter=%22url%28%23goo%29%22%3E%20%20%3Cpath%20d=%22M92,61.0%20C101.9,87.39999999999999%20158,113.80000000000001%20158,160%20A66,66%200%200%201%2026,160%20C26,113.80000000000001%2082.1,87.39999999999999%2092,61.0%20Z%22%20fill=%22url%28%23aq%29%22/%3E%20%20%3Cpath%20d=%22M184,52.0%20C190.0,68.0%20224,84.0%20224,112%20A40,40%200%200%201%20144,112%20C144,84.0%20178.0,68.0%20184,52.0%20Z%22%20fill=%22url%28%23co%29%22/%3E%3C/g%3E%3Cellipse%20cx=%2268%22%20cy=%22140%22%20rx=%2211%22%20ry=%2220%22%20fill=%22%23fff%22%20opacity=%22.55%22%20transform=%22rotate%2818%2068%20140%29%22/%3E%3Cellipse%20cx=%22176%22%20cy=%22104%22%20rx=%226%22%20ry=%2211%22%20fill=%22%23fff%22%20opacity=%22.6%22%20transform=%22rotate%2818%20176%20104%29%22/%3E%3Cpath%20d=%22M30%20236%20Q128%20252%20226%20236%22%20fill=%22none%22%20stroke=%22%230f9fc4%22%20stroke-width=%227%22%20stroke-linecap=%22round%22%20opacity=%22.45%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#effaff;--card:#fbfeff;--ink:#12324a;--soft:#5f7f94;--line:#d3ecf7;--tan:#b9dff0;
+  --teal:#38c6e6;--teal-d:#1a8fb3;--mint:#8fe6e0;--butter:#ffe28a;--sky:#8fd0ff;--peach:#ffb199;--lilac:#c0aaff;
+  --okt:#178a63;--badt:#d0402f;--warn:#b7791f;
+  --disp:"Fredoka",ui-rounded,"Nunito",system-ui,sans-serif;
+  --sans:"Nunito",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--cream);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mk{display:block;flex:none;background:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20256%20256%22%20width=%22256%22%20height=%22256%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22aq%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%235df2e0%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%230f9fc4%22/%3E%3C/linearGradient%3E%3ClinearGradient%20id=%22co%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%23ff9aa6%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%23ff4d6a%22/%3E%3C/linearGradient%3E%3Cfilter%20id=%22goo%22%20x=%22-20%25%22%20y=%22-20%25%22%20width=%22140%25%22%20height=%22140%25%22%3E%3CfeGaussianBlur%20stdDeviation=%228%22/%3E%3CfeColorMatrix%20values=%221%200%200%200%200%20%200%201%200%200%200%20%200%200%201%200%200%20%200%200%200%2024%20-10%22/%3E%3C/filter%3E%3C/defs%3E%3Cg%20filter=%22url%28%23goo%29%22%3E%20%20%3Cpath%20d=%22M92,61.0%20C101.9,87.39999999999999%20158,113.80000000000001%20158,160%20A66,66%200%200%201%2026,160%20C26,113.80000000000001%2082.1,87.39999999999999%2092,61.0%20Z%22%20fill=%22url%28%23aq%29%22/%3E%20%20%3Cpath%20d=%22M184,52.0%20C190.0,68.0%20224,84.0%20224,112%20A40,40%200%200%201%20144,112%20C144,84.0%20178.0,68.0%20184,52.0%20Z%22%20fill=%22url%28%23co%29%22/%3E%3C/g%3E%3Cellipse%20cx=%2268%22%20cy=%22140%22%20rx=%2211%22%20ry=%2220%22%20fill=%22%23fff%22%20opacity=%22.55%22%20transform=%22rotate%2818%2068%20140%29%22/%3E%3Cellipse%20cx=%22176%22%20cy=%22104%22%20rx=%226%22%20ry=%2211%22%20fill=%22%23fff%22%20opacity=%22.6%22%20transform=%22rotate%2818%20176%20104%29%22/%3E%3Cpath%20d=%22M30%20236%20Q128%20252%20226%20236%22%20fill=%22none%22%20stroke=%22%230f9fc4%22%20stroke-width=%227%22%20stroke-linecap=%22round%22%20opacity=%22.45%22/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* ---------- ROOM ---------- */
+.room{position:fixed;inset:0;background:linear-gradient(#8fd0f7 0%,#e6f8ff 52%,#5fc4e0 52%,#2f9fcf 100%)}
+#stage{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;outline:none}
+.room__brand{position:fixed;top:20px;left:24px;display:flex;align-items:center;gap:8px;z-index:5;font-family:var(--disp);font-weight:600;font-size:22px;color:var(--ink)}
+.room__brand .mk{width:56px;height:56px;margin:-6px 0 -6px -4px;filter:drop-shadow(0 3px 0 rgba(18,50,74,.15))}
+.room__title{position:fixed;right:28px;top:84px;z-index:4;max-width:min(470px,44vw);pointer-events:none;
+  padding:22px 28px 24px;background:rgba(247,253,255,.88);border:3px solid var(--ink);border-radius:40px 44px 38px 46px;
+  box-shadow:0 7px 0 var(--ink),0 18px 34px rgba(18,50,74,.18),inset 0 -8px 0 rgba(56,198,230,.18),inset 0 4px 0 #fff;backdrop-filter:blur(6px)}
+.room__title::before,.room__title::after{content:"";position:absolute;border-radius:50%;background:rgba(247,253,255,.9);border:3px solid var(--ink);z-index:-1}
+.room__title::before{width:34px;height:34px;left:-14px;top:-16px}
+.room__title::after{width:20px;height:20px;left:-26px;top:16px}
+.room__title .ttl{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.4vw,58px);line-height:1.02;letter-spacing:-.02em;color:var(--ink)}
+.room__title .ttl span{display:block;color:#1a8fb3}
+.room__title p{margin-top:12px;font-size:clamp(14px,1.3vw,17px);line-height:1.45;color:#1d4560;max-width:400px;font-weight:700}
+.sound{position:fixed;top:18px;right:20px;z-index:5;font-family:var(--disp);font-weight:500;font-size:15px;color:var(--ink);padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.7);box-shadow:0 3px 0 rgba(0,0,0,.12);transition:transform .1s}
+.sound:active{transform:translateY(2px)}
+.counter{position:fixed;left:24px;bottom:22px;z-index:5;font-family:var(--disp);font-weight:500;font-size:16px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.78);box-shadow:0 4px 0 rgba(0,0,0,.12);pointer-events:none}
+.counter b{font-weight:700;color:var(--teal-d);margin-left:4px}
+.hint{position:fixed;right:24px;bottom:26px;font-family:var(--disp);font-weight:500;font-size:15px;color:#1d4560;z-index:5;pointer-events:none;background:rgba(255,255,255,.6);padding:7px 14px;border-radius:999px}
+.keys{position:fixed;left:22px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;z-index:5;list-style:none}
+.tip{position:fixed;z-index:6;pointer-events:none;font-family:var(--disp);font-weight:600;font-size:15px;white-space:nowrap;color:#fff;background:var(--ink);padding:5px 12px;border-radius:999px;opacity:0;transform:translate(16px,16px);transition:opacity .15s}
+.tip.on{opacity:1}
+.fade{position:fixed;inset:0;background:var(--mint);z-index:9;opacity:0;pointer-events:none;transition:opacity .28s ease}
+.fade.on{opacity:1}
+.cover{position:fixed;inset:0;background:var(--cream);z-index:50;display:flex;align-items:center;justify-content:center;transition:opacity .5s ease;pointer-events:none}
+.cover.off{opacity:0}
+.cover span{font-family:var(--disp);font-weight:600;font-size:22px;color:var(--teal-d)}
+.cover .bar{position:absolute;left:0;bottom:0;height:6px;background:var(--teal);width:0;border-radius:0 6px 6px 0;animation:load 1.1s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes load{to{width:100%}}
+body.no3d .counter,body.no3d .hint{display:none}
+@media (max-width:700px){
+  .room__title{top:70px;left:auto;right:18px;max-width:calc(100vw - 36px)}
+  .room__brand{left:18px}
+  .keys{left:12px;top:auto;bottom:calc(20px + env(safe-area-inset-bottom));transform:none;gap:9px}
+  .key{min-width:0;font-size:15px;padding:9px 18px 9px 26px}
+  .key::before{left:10px;width:7px;height:7px;margin-top:-3.5px}
+  .hint,.sound{display:none}
+  .counter{bottom:auto;top:20px;left:auto;right:16px}
+}
+
+/* ---------- PAGES ---------- */
+.chrome{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;
+  background:linear-gradient(var(--cream) 62%,rgba(239,250,255,0));opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.chrome.on{opacity:1;visibility:visible}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:600;font-size:22px}
+.brand .mk{width:44px;height:44px;margin:-4px 0}
+.nav{display:flex;gap:6px;font-family:var(--disp);font-weight:500;font-size:15px}
+.nav a{padding:9px 16px;border-radius:999px;color:var(--soft);transition:color .2s,background .2s}
+.nav a:hover{color:var(--ink)}
+.nav a.on{color:var(--ink);background:#fff;box-shadow:0 3px 0 var(--tan)}
+
+/* ---- stats, rules, trust, empty, skeleton, share, footer ---- */
+.flow{display:flex;gap:10px;flex-wrap:wrap;list-style:none;margin:22px 0 18px;padding:0}
+.flow li{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:600;font-size:15px;padding:8px 16px 8px 8px;border-radius:999px;background:#fff;color:var(--soft);box-shadow:0 3px 0 var(--tan);transition:all .25s}
+.flow i{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:14px;background:var(--line);color:var(--soft)}
+.flow li.on{color:var(--ink);box-shadow:0 3px 0 var(--teal-d)}
+.flow li.on i{background:var(--teal);color:#fff}
+.flow li.done i{background:var(--teal-d);color:#fff}.flow li.done{color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.stat{background:var(--card);border:3px solid var(--line);border-radius:24px;padding:16px 20px;box-shadow:0 5px 0 var(--line)}
+.stat b{display:block;font-family:var(--disp);font-weight:700;font-size:30px;line-height:1.1;color:var(--teal-d)}
+.stat span{font-size:13px;font-weight:700;color:var(--soft);letter-spacing:.03em}
+.rules{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.rules span{font-family:var(--disp);font-weight:600;font-size:14px;background:#fff;padding:7px 14px;border-radius:999px;box-shadow:0 3px 0 var(--tan);color:var(--ink)}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.trust div{display:flex;gap:10px;align-items:flex-start;background:rgba(56,198,230,.12);border:2.5px solid rgba(26,143,179,.35);border-radius:20px;padding:12px 14px;font-size:14px;line-height:1.4;font-weight:700;color:#14506b}
+.trust i{flex:none;width:22px;height:22px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:800}
+.empty b{display:block;font-family:var(--disp);font-size:22px;color:var(--ink);margin-bottom:6px}
+.empty a.btn{margin-top:18px;height:46px;font-size:16px}
+.ph{margin-top:26px;border:3px dashed var(--tan);border-radius:28px;padding:34px 22px;text-align:center;color:var(--soft);font-weight:700;font-size:16px;line-height:1.5}
+.ph b{display:block;font-family:var(--disp);font-size:20px;color:var(--ink);margin-bottom:4px}
+.skel{height:190px;border-radius:28px;background:linear-gradient(100deg,#e2f3fa 30%,#effaff 50%,#e2f3fa 70%) 0 0/240% 100%;animation:skel 1.1s linear infinite}
+@keyframes skel{to{background-position:-140% 0}}
+.act2{display:flex;gap:8px;flex-wrap:wrap}
+.act2 .btn{height:38px;padding:0 16px;font-size:14px}
+.back{display:inline-block;margin-bottom:14px;font-family:var(--disp);font-weight:600;color:var(--teal-d)}
+.foot{margin-top:64px;padding-top:26px;border-top:3px dashed var(--tan);display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between;font-size:14px;font-weight:700;color:var(--soft)}
+.foot nav{display:flex;gap:18px;flex-wrap:wrap}.foot a{color:var(--ink)}.foot a:hover{color:var(--teal-d)}
+.foot p{flex-basis:100%;font-size:13px;line-height:1.5;font-weight:600}
+@media(max-width:700px){.stats,.trust{grid-template-columns:1fr}.stat b{font-size:26px}}
+.wm{position:fixed;inset:0;z-index:60;display:none;place-items:center;background:rgba(18,50,74,.45);backdrop-filter:blur(4px);padding:18px}
+.wm.on{display:grid}
+.wm__c{position:relative;width:min(420px,100%);background:var(--card);border:3px solid var(--ink);border-radius:32px;padding:26px 24px 24px;box-shadow:0 8px 0 var(--ink)}
+.wm__c h3{font-family:var(--disp);font-weight:700;font-size:26px;color:var(--ink)}
+.wm__c p{margin:8px 0 16px;color:var(--soft);font-size:14px;line-height:1.45;font-weight:600}
+.wm__x{position:absolute;top:14px;right:16px;font-size:28px;line-height:1;color:var(--soft)}
+.wm__l{display:grid;gap:10px}
+.wm__b{display:flex;align-items:center;gap:12px;width:100%;padding:12px 16px;border-radius:999px;background:#fff;box-shadow:0 4px 0 var(--tan);font-family:var(--disp);font-weight:600;font-size:17px;color:var(--ink);text-align:left;transition:transform .08s,box-shadow .08s}
+.wm__b:active{transform:translateY(3px);box-shadow:0 1px 0 var(--tan)}
+.wm__b i{width:26px;height:26px;border-radius:50%;border:2.5px solid var(--ink);flex:none}
+.wm__b span{flex:1}.wm__b em{font-style:normal;font-size:12px;font-weight:700;color:var(--soft);letter-spacing:.04em;text-transform:uppercase}
+.wallet{font-family:var(--disp);font-weight:600;font-size:15px;padding:10px 18px;border-radius:999px;background:#fff;box-shadow:0 4px 0 var(--tan);transition:transform .08s,box-shadow .08s}
+.wallet:active{transform:translateY(3px);box-shadow:0 1px 0 var(--tan)}
+.wallet.on{font-family:var(--mono);font-size:13px}
+.page{position:fixed;inset:0;z-index:10;background:var(--cream) radial-gradient(#d8eef8 1.6px,transparent 1.6px) 0 0/24px 24px;overflow-y:auto;overflow-x:hidden;opacity:0;visibility:hidden;transform:translateY(12px);
+  transition:opacity .35s ease,transform .35s ease,visibility .35s}
+.page.on{opacity:1;visibility:visible;transform:none}
+.main{max-width:1120px;margin:0 auto;padding:120px 24px 96px}
+.label{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-d);background:#fff;padding:6px 14px;border-radius:999px;box-shadow:0 3px 0 var(--tan)}
+.label::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--teal)}
+.h{font-family:var(--disp);font-weight:700;font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:-.025em;margin:18px 0 16px}
+.h span{display:block}
+.h .d{color:var(--teal-d)}
+.lede{font-size:18px;line-height:1.55;color:#47657a;max-width:560px;font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:50px;padding:0 26px;border-radius:999px;font-family:var(--disp);font-size:17px;font-weight:600;transition:transform .08s,box-shadow .08s,opacity .2s}
+.btn--p{background:var(--teal);color:var(--ink);box-shadow:0 6px 0 #1678a0,inset 0 3px 0 rgba(255,255,255,.4)}
+.btn--p:hover{background:#5cd2ec}
+.btn--p:active{transform:translateY(4px);box-shadow:0 2px 0 #1678a0,inset 0 3px 0 rgba(255,255,255,.4)}
+.btn--p:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.btn--g{background:#fff;box-shadow:0 5px 0 var(--tan)}
+.btn--g:hover{background:#f4fcff}
+.btn--g:active{transform:translateY(3px);box-shadow:0 2px 0 var(--tan)}
+.btn--g:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.btn--s{height:38px;padding:0 16px;font-size:14px}
+.btn .ar{transition:transform .2s}
+.btn:hover .ar{transform:translateX(3px)}
+.msg{font-size:15px;color:var(--soft);min-height:22px;margin-top:14px;font-weight:600}
+.msg.err{color:var(--badt)}.msg.ok{color:var(--okt)}.msg.warn{color:var(--warn)}
+.field{display:block;margin-bottom:16px}
+.field__l{display:flex;justify-content:space-between;font-family:var(--disp);font-weight:500;font-size:14px;color:var(--soft);margin-bottom:8px}
+.field__l b{font-family:var(--mono);font-weight:500;color:var(--ink);font-size:13px}
+.input{width:100%;background:#fff;border:3px solid var(--line);border-radius:18px;color:var(--ink);font:500 14px var(--mono);padding:14px 16px;outline:none;transition:border-color .2s}
+.input:focus{border-color:var(--teal)}
+.input::placeholder{color:#9dbccd}
+input[type=range]{width:100%;accent-color:var(--teal);height:6px}
+.mt{margin-top:40px;display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:end}
+.swap{width:52px;height:52px;border-radius:50%;background:#fff;box-shadow:0 4px 0 var(--tan);display:grid;place-items:center;color:var(--soft);margin-bottom:16px;transition:transform .3s}
+.swap:hover{color:var(--ink);transform:rotate(180deg)}
+.sliders{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.go{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.res{margin-top:40px;display:none}
+.res.on{display:block;animation:rise .5s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.res__grid{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:16px;align-items:stretch}
+.coin,.out,.terms,.gate,.prop{background:var(--card);border:3px solid var(--line);border-radius:28px;box-shadow:0 6px 0 var(--line)}
+.coin{padding:22px}
+.coin__top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.coin__img{width:46px;height:46px;border-radius:50%;background:var(--mint) center/cover no-repeat;flex:none;display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:22px;color:var(--ink)}
+.coin__name{font-family:var(--disp);font-weight:600;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.coin__tick{font-family:var(--mono);font-size:12px;color:var(--soft)}
+.tag{display:inline-block;font-family:var(--disp);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:3px 12px;border-radius:999px;background:var(--line);color:var(--soft);margin-bottom:12px}
+.tag--host{background:var(--teal);color:var(--ink)}
+.kv{display:flex;justify-content:space-between;font-size:14px;color:var(--soft);padding:8px 0;border-top:2px dashed var(--line);font-weight:600}
+.kv b{font-weight:500;color:var(--ink);font-family:var(--mono);font-size:13px}
+.viz{border-radius:28px;background:radial-gradient(90% 90% at 50% 50%,#e3f8ff,#c6ecfa);border:3px solid #a9dff2;box-shadow:0 6px 0 #a9dff2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;min-height:250px}
+.viz svg{width:100%;height:auto;max-height:200px}
+.viz__cap{font-family:var(--disp);font-weight:600;font-size:16px;color:var(--teal-d)}
+.out{margin-top:16px;padding:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.out__k{font-size:13px;color:var(--soft);margin-bottom:8px;font-weight:700}
+.out__v{font-family:var(--disp);font-size:28px;font-weight:600;letter-spacing:-.02em}
+.out__s{font-family:var(--mono);font-size:12px;color:var(--soft);margin-top:6px}
+.terms{margin-top:16px;overflow:hidden}
+.terms__r{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 22px;border-top:2px dashed var(--line);font-size:15px;font-weight:600}
+.terms__r:first-child{border-top:0}
+.terms__r span{color:var(--soft)}
+.terms__r b{font-family:var(--mono);font-weight:500;font-size:14px;text-align:right}
+.gate{margin-top:16px;padding:18px 22px;font-size:15px;font-weight:700;display:flex;gap:14px;align-items:center}
+.gate i{width:14px;height:14px;border-radius:50%;flex:none;background:var(--teal)}
+.gate.bad i{background:#ff7a66}
+.gate.bad{border-color:#ffc9be;box-shadow:0 6px 0 #ffc9be}
+.act{margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.how-hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.how-anim svg{width:100%;height:auto}
+.steps{margin-top:72px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:var(--card);border:3px solid var(--line);box-shadow:0 6px 0 var(--line);border-radius:28px;padding:24px}
+.step__n{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:20px;background:var(--c,var(--mint))}
+.step:nth-child(1){--c:var(--mint)}.step:nth-child(2){--c:var(--butter)}.step:nth-child(3){--c:var(--sky)}.step:nth-child(4){--c:var(--peach)}
+.step__t{font-family:var(--disp);font-weight:700;font-size:21px;margin:16px 0 8px}
+.step__d{font-size:15px;line-height:1.55;color:#47657a;font-weight:600}
+.fine{margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.fine div{background:var(--card);border:3px solid var(--line);border-radius:24px;padding:22px;font-size:15px;line-height:1.55;color:#47657a;font-weight:600}
+.fine b{display:block;font-family:var(--disp);font-weight:600;font-size:18px;color:var(--ink);margin-bottom:6px}
+.risk{margin-top:16px;border:3px dashed #a9d6ea;border-radius:24px;padding:22px;font-size:15px;line-height:1.55;color:#47657a;background:#e3f5ff;font-weight:600}
+.risk b{color:var(--ink);font-family:var(--disp);font-weight:600}
+.tabs{display:flex;gap:8px;margin-top:32px;flex-wrap:wrap;align-items:center}
+.tab{font-family:var(--disp);font-weight:600;font-size:16px;padding:9px 20px;border-radius:999px;color:var(--soft);background:transparent}
+.tab.on{color:var(--ink);background:#fff;box-shadow:0 4px 0 var(--tan)}
+.tabs .sp{flex:1}
+.list{margin-top:22px;display:grid;gap:18px}
+.empty{background:var(--card);border:3px dashed var(--tan);border-radius:28px;padding:70px 20px;text-align:center;color:var(--soft);font-size:16px;font-weight:700}
+.prop{padding:24px}
+.prop__h{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.prop__t{font-family:var(--disp);font-size:24px;font-weight:700;letter-spacing:-.01em}
+.prop__t span{color:var(--teal-d);padding:0 8px}
+.prop__m{font-family:var(--mono);font-size:12.5px;color:var(--soft);margin-top:6px}
+.badge{font-family:var(--disp);font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;padding:5px 14px;border-radius:999px;background:var(--butter);color:var(--ink)}
+.badge.ok{background:var(--mint)}
+.badge.bad{background:#ffb4a5}
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.side{border-radius:22px;padding:18px;background:#effaff;border:3px solid var(--line)}
+.side__h{display:flex;justify-content:space-between;font-size:14px;color:var(--soft);margin-bottom:10px;font-weight:700}
+.side__h b{color:var(--ink);font-weight:500;font-family:var(--mono);font-size:13px}
+.bar{height:12px;border-radius:12px;background:#d3ecf7;overflow:hidden;margin:6px 0 10px}
+.bar i{display:block;height:100%;background:var(--teal);border-radius:12px;transition:width .5s}
+.side__f{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:12px;font-size:13px;color:var(--soft);font-weight:700}
+.vbtns{display:flex;gap:8px}
+.prop__f{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;flex-wrap:wrap;font-size:14px;color:var(--soft);font-weight:700}
+.clock{font-family:var(--mono);color:var(--ink)}
+#toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,20px);background:var(--ink);color:#fff;font-family:var(--disp);font-size:16px;font-weight:500;padding:13px 22px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:60;max-width:calc(100vw - 32px)}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media (max-width:900px){
+  .fine{grid-template-columns:1fr}
+  .how-hero{grid-template-columns:1fr}
+  .res__grid{grid-template-columns:1fr}
+  .out{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .nav{display:none}
+  .sides{grid-template-columns:1fr}
+  .sliders{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .mt{grid-template-columns:1fr}
+  .swap{margin:0 auto 4px;transform:rotate(90deg)}
+  .swap:hover{transform:rotate(270deg)}
+  .steps{grid-template-columns:1fr}
+  .main{padding:100px 16px 80px}
+  .chrome{padding:12px 16px}
+}
+
+/* ---------- v2 water skin ---------- */
+.room__title{background:linear-gradient(160deg,rgba(247,253,255,.86),rgba(205,242,255,.6));border:2px solid rgba(255,255,255,.85);border-radius:54px 60px 52px 62px;
+  box-shadow:0 22px 50px rgba(4,55,105,.32),inset 0 3px 0 rgba(255,255,255,.95),inset 0 -16px 30px rgba(110,205,245,.28);backdrop-filter:blur(14px) saturate(1.35)}
+.room__title::before,.room__title::after{background:radial-gradient(circle at 30% 26%,#fff 0 16%,rgba(205,242,255,.6) 40%,rgba(160,225,250,.35));border:2px solid rgba(255,255,255,.9);box-shadow:inset 0 -3px 6px rgba(20,120,180,.2)}
+.keys li{animation:bob 4.8s ease-in-out infinite}
+.keys li:nth-child(2){animation-delay:-1s}.keys li:nth-child(3){animation-delay:-2s}.keys li:nth-child(4){animation-delay:-3s}.keys li:nth-child(5){animation-delay:-4s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.key{position:relative;display:flex;align-items:center;gap:12px;min-width:156px;font-family:var(--disp);font-weight:600;font-size:18px;color:#0b3350;padding:11px 28px 11px 12px;border-radius:999px;
+  background:radial-gradient(120% 110% at 22% 8%,rgba(255,255,255,.95) 0,rgba(255,255,255,.4) 26%,rgba(255,255,255,0) 52%),linear-gradient(180deg,color-mix(in srgb,var(--c) 62%,#fff),var(--c));
+  border:2px solid rgba(255,255,255,.9);
+  box-shadow:0 12px 24px rgba(5,70,125,.32),inset 0 -9px 14px color-mix(in srgb,var(--c) 55%,#0a6a9a),inset 0 4px 8px rgba(255,255,255,.75);
+  transform-origin:left center;transition:transform .45s cubic-bezier(.3,1.9,.45,1),box-shadow .3s,filter .3s}
+.key::before{content:"";flex:none;width:30px;height:30px;border-radius:50%;
+  background:radial-gradient(circle at 32% 26%,#fff 0 16%,rgba(255,255,255,.28) 30%,rgba(255,255,255,.06) 62%,rgba(255,255,255,.55) 100%);
+  border:1.5px solid rgba(255,255,255,.95);box-shadow:inset 0 -4px 7px rgba(10,100,150,.28);transition:transform .5s cubic-bezier(.3,1.9,.45,1)}
+.key::after{content:"";position:absolute;left:52px;right:26px;top:7px;height:7px;border-radius:99px;background:linear-gradient(90deg,rgba(255,255,255,.8),rgba(255,255,255,0));opacity:.8}
+.key:hover,.key:focus-visible,.key.sel{transform:translateX(14px) scale(1.09);filter:saturate(1.15);outline:none;
+  box-shadow:0 18px 32px rgba(5,70,125,.38),0 0 0 6px rgba(255,255,255,.28),inset 0 -9px 14px color-mix(in srgb,var(--c) 55%,#0a6a9a),inset 0 4px 8px rgba(255,255,255,.85)}
+.key:hover::before,.key:focus-visible::before,.key.sel::before{transform:scale(1.18) rotate(-12deg)}
+.key:active{transform:translateX(10px) scale(.95,1.06)}
+.key .pop{position:absolute;left:var(--x);top:40%;width:var(--s);height:var(--s);margin:-3px 0 0 -3px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 30% 28%,#fff 0 20%,rgba(255,255,255,.3) 45%,rgba(255,255,255,.1));border:1.5px solid rgba(255,255,255,.95);opacity:0;animation:pop .95s ease-out forwards}
+@keyframes pop{0%{opacity:0;transform:translate(0,0) scale(.3)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.15)}}
+@media (max-width:700px){
+  .keys{left:12px;top:auto;bottom:calc(20px + env(safe-area-inset-bottom));transform:none;gap:9px}
+  .key{min-width:0;font-size:15px;padding:8px 20px 8px 9px;gap:9px}
+  .key::before{width:24px;height:24px}.key::after{left:42px;top:5px}
+}
+.page{background:linear-gradient(180deg,#e9fbff 0%,#d1f0fb 55%,#b7e5f6 100%)}
+.main{position:relative;z-index:1}
+.sea{position:fixed;inset:0;overflow:hidden;pointer-events:none}
+.sea i{position:absolute;bottom:-70px;width:var(--s);height:var(--s);border-radius:50%;
+  background:radial-gradient(circle at 30% 26%,rgba(255,255,255,.95) 0 14%,rgba(255,255,255,.22) 32%,rgba(255,255,255,.06) 62%,rgba(255,255,255,.5));
+  border:1.5px solid rgba(255,255,255,.85);animation:seaup linear infinite}
+@keyframes seaup{0%{transform:translate(0,0)}25%{transform:translate(14px,-30vh)}50%{transform:translate(-10px,-62vh)}75%{transform:translate(12px,-92vh)}100%{transform:translate(0,-125vh)}}
+.coin,.out,.terms,.gate,.prop,.stat,.step,.fine div,.side,.wm__c{background:linear-gradient(160deg,rgba(255,255,255,.82),rgba(255,255,255,.55));border:2px solid rgba(255,255,255,.95);
+  box-shadow:0 14px 34px rgba(20,110,165,.14),inset 0 3px 0 #fff,inset 0 -10px 20px rgba(130,210,245,.14);backdrop-filter:blur(8px)}
+.coin,.out,.terms,.gate,.prop{border-radius:34px}.stat,.step,.fine div{border-radius:30px}
+.empty,.ph{background:rgba(255,255,255,.45);border:2.5px dashed rgba(26,143,179,.35);border-radius:34px}
+.gate.bad{border-color:#ffc9be;box-shadow:0 14px 34px rgba(255,120,100,.2)}
+.label,.flow li,.rules span,.tab.on,.nav a.on,.wallet,.btn--g,.swap,.wm__b{background:rgba(255,255,255,.8);border:2px solid #fff;box-shadow:0 8px 18px rgba(20,110,165,.14),inset 0 -4px 8px rgba(130,210,245,.2)}
+.input{background:rgba(255,255,255,.75);border:2px solid rgba(255,255,255,.95);box-shadow:inset 0 2px 6px rgba(20,110,165,.1)}
+.btn{transition:transform .4s cubic-bezier(.3,1.9,.45,1),box-shadow .3s,opacity .2s}
+.btn--p{background:radial-gradient(120% 130% at 24% 6%,rgba(255,255,255,.75),rgba(255,255,255,0) 52%),var(--teal);border:2px solid rgba(255,255,255,.85);
+  box-shadow:0 10px 22px rgba(20,120,170,.34),inset 0 -7px 12px rgba(10,90,150,.28),inset 0 3px 0 rgba(255,255,255,.6)}
+.btn--p:hover,.btn--g:hover{transform:scale(1.06)}
+.btn--p:active,.btn--g:active{transform:scale(.95,1.05);box-shadow:0 4px 10px rgba(20,120,170,.3),inset 0 -5px 10px rgba(10,90,150,.25)}
+.btn--p:disabled,.btn--g:disabled{transform:none}
+.risk{background:rgba(255,255,255,.6);border:2.5px dashed rgba(26,143,179,.4);border-radius:30px}
+.skel{background:linear-gradient(100deg,#d9eff8 30%,#f1fbff 50%,#d9eff8 70%) 0 0/240% 100%}
+.bar{background:rgba(120,200,235,.3)}
+input[type=range]{-webkit-appearance:none;appearance:none;height:12px;border-radius:99px;background:linear-gradient(90deg,rgba(56,198,230,.55),rgba(120,200,235,.3));box-shadow:inset 0 2px 4px rgba(20,110,165,.18);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid #fff;background:radial-gradient(circle at 32% 26%,#fff 0 16%,rgba(255,255,255,.35) 32%,var(--teal) 70%);box-shadow:0 6px 12px rgba(20,120,170,.35);transition:transform .35s cubic-bezier(.3,1.9,.45,1)}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.2)}
+input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;cursor:pointer;border:2px solid #fff;background:radial-gradient(circle at 32% 26%,#fff 0 16%,var(--teal) 70%)}
+
+/* ---------- v2 page layouts ---------- */
+.chrome{background:linear-gradient(rgba(255,255,255,.6),rgba(255,255,255,0));backdrop-filter:blur(8px)}
+.page[data-page=vote]{background:linear-gradient(180deg,#e4fff7 0%,#c3f1ee 58%,#a6e4ee 100%)}
+.page[data-page=how]{--teal:#8b97f7;--teal-d:#4b57cf;background:linear-gradient(180deg,#eef1ff 0%,#d3dcfb 55%,#b4c4f3 100%)}
+.page[data-page=board],.page[data-page=p]{--teal:#ff93ac;--teal-d:#c2416b}
+.page[data-page=board]{background:linear-gradient(180deg,#fff4ee 0%,#ffe2da 55%,#fccfd3 100%)}
+.page[data-page=p]{background:linear-gradient(180deg,#eefcff 0%,#d3f1fb 100%)}
+.page[data-page=p]{--teal:#38c6e6;--teal-d:#1a8fb3}
+.page[data-page=p] .main{max-width:860px}
+
+/* Ripple: sticky tide panel + vessels */
+.tide{display:grid;grid-template-columns:minmax(260px,340px) minmax(0,1fr);gap:52px;align-items:start;max-width:1200px}
+.tide__side{position:sticky;top:104px}
+.tide__rules{list-style:none;display:grid;gap:10px;margin-top:22px}
+.tide__rules li{display:flex;align-items:center;gap:12px;font-family:var(--disp);font-weight:600;font-size:15px;background:rgba(255,255,255,.72);border:2px solid #fff;border-radius:999px;padding:9px 16px;box-shadow:0 8px 18px rgba(20,110,165,.12)}
+.tide__rules li::before{content:"";flex:none;width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 30% 28%,#fff 0 20%,var(--teal) 70%)}
+.stats--orbs{grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px}
+.stats--orbs .stat{aspect-ratio:1;border-radius:50%;display:grid;place-content:center;text-align:center;padding:6px;
+  background:radial-gradient(circle at 30% 24%,#fff 0 12%,rgba(255,255,255,.55) 34%,rgba(170,230,250,.35) 100%)}
+.stats--orbs .stat b{font-size:19px}.stats--orbs .stat span{font-size:10.5px;line-height:1.2;letter-spacing:0}
+.tide__safe{display:grid;gap:6px;margin-top:22px;font-size:13.5px;font-weight:700;color:#14506b}
+.tide__list{margin-top:0}
+.tide__item{padding:26px 26px 20px}
+.tide__top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.tide__item .prop__m{margin-top:4px}
+.tide__pair{display:grid;grid-template-columns:1fr 84px 1fr;gap:8px;align-items:start;margin-top:22px}
+.tide__mid{display:grid;gap:8px;justify-items:center;padding-top:62px;font-family:var(--disp);font-weight:600;font-size:12.5px;color:var(--soft)}
+.tide__mid b{font-size:34px;line-height:1;color:var(--teal);font-weight:700}
+.tide__mid span{background:rgba(255,255,255,.8);border:2px solid #fff;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.vessel{display:grid;justify-items:center;gap:8px;text-align:center}
+.vessel__tag{font-family:var(--disp);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-d)}
+.vessel__bowl{position:relative;width:min(172px,100%);aspect-ratio:1;border-radius:50%;overflow:hidden;border:3px solid #fff;background:rgba(255,255,255,.45);
+  box-shadow:0 16px 30px rgba(20,110,165,.2),inset 0 -10px 20px rgba(255,255,255,.55)}
+.vessel__w{position:absolute;left:0;right:0;bottom:0;height:var(--h);min-height:8px;background:linear-gradient(180deg,#7be4f6,#2aa6d6);transition:height .9s cubic-bezier(.3,1.4,.5,1)}
+.vessel__w::before{content:"";position:absolute;left:0;top:-12px;width:200%;height:14px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 14' preserveAspectRatio='none'%3E%3Cpath d='M0 14V7Q12.5 0 25 7T50 7T75 7T100 7V14Z' fill='%237be4f6'/%3E%3C/svg%3E") repeat-x 0 0/50% 100%;animation:wave 3.2s linear infinite}
+@keyframes wave{to{transform:translateX(-50%)}}
+.vessel__bowl::after{content:"";position:absolute;left:16%;top:9%;width:26%;height:14%;border-radius:50%;background:rgba(255,255,255,.7);transform:rotate(-30deg);filter:blur(1px)}
+.vessel__v{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--disp)}
+.vessel__v b{font-size:36px;line-height:1;color:#0b3350;text-shadow:0 2px 0 rgba(255,255,255,.6)}
+.vessel__v span{font-size:12px;font-weight:700;color:#14506b}
+.vessel__sym{font-family:var(--disp);font-weight:700;font-size:20px}
+.vessel__q{width:78%;height:8px;border-radius:99px;background:rgba(120,200,235,.3);overflow:hidden}
+.vessel__q i{display:block;height:100%;border-radius:99px;background:var(--teal);transition:width .6s}
+.vessel__m{font-size:12px;color:var(--soft);font-weight:700;line-height:1.35}
+.vessel__c{display:grid;gap:8px;justify-items:center;font-size:12.5px;color:var(--soft);font-weight:700}
+
+/* How it works: the current */
+.cur{max-width:1000px}
+.cur__hero{text-align:center;display:grid;justify-items:center}
+.cur__hero .lede{margin:0 auto}
+.cur__hero .how-anim{width:min(520px,92%);margin-top:6px}
+.cur__steps{list-style:none;position:relative;margin:64px auto 0;display:grid;gap:30px;padding:0}
+.cur__steps::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:40px;margin-left:-20px;opacity:.85;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 120'%3E%3Cpath d='M20 0C34 20 34 40 20 60S6 100 20 120' stroke='white' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-y 0 0/40px 120px}
+.cur__step{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.cur__n{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:24px;color:#0b3350;z-index:1;
+  background:radial-gradient(circle at 30% 24%,rgba(255,255,255,.95) 0 14%,rgba(255,255,255,0) 40%),var(--c);border:3px solid #fff;box-shadow:0 10px 20px rgba(20,60,150,.22),inset 0 -6px 10px rgba(0,0,0,.08)}
+.cur__card{padding:22px 26px;border-radius:34px;background:linear-gradient(160deg,rgba(255,255,255,.88),rgba(255,255,255,.58));border:2px solid #fff;box-shadow:0 14px 34px rgba(40,70,160,.14),inset 0 3px 0 #fff}
+.cur__step:nth-child(odd) .cur__card{grid-column:1;margin-right:56px;text-align:right}
+.cur__step:nth-child(even) .cur__card{grid-column:2;margin-left:56px}
+.cur .step__t{margin:0 0 6px}
+.cur__orbs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:84px}
+.orb{width:260px;aspect-ratio:1;border-radius:50%;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:38px;font-size:13.5px;line-height:1.5;font-weight:600;color:#33507a;
+  background:radial-gradient(circle at 30% 22%,#fff 0 9%,rgba(255,255,255,.62) 30%,rgba(190,205,255,.4) 100%);border:2px solid #fff;box-shadow:0 18px 38px rgba(40,70,160,.18),inset 0 -14px 26px rgba(150,170,250,.22);animation:bob 5.2s ease-in-out infinite}
+.orb:nth-child(2){margin-top:34px;animation-delay:-1.7s}.orb:nth-child(3){animation-delay:-3.2s}
+.orb b{display:block;font-family:var(--disp);font-size:20px;color:#0b3350;margin-bottom:6px}
+.bottle{display:flex;gap:18px;align-items:flex-start;margin-top:76px;border-radius:44px;padding:26px 30px;background:linear-gradient(135deg,rgba(255,255,255,.78),rgba(255,222,210,.6));border:2px solid #fff;box-shadow:0 18px 38px rgba(40,70,160,.16),inset 0 3px 0 #fff;transform:rotate(-.6deg)}
+.bottle__i{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:24px;color:#fff;background:radial-gradient(circle at 30% 24%,#ffd0c2,#ff7a66);border:2px solid #fff;box-shadow:0 8px 14px rgba(255,100,80,.35)}
+
+/* Pool: pearls */
+.pool{max-width:1180px;text-align:center}
+.pool__head{display:grid;justify-items:center}
+.stats--pearls{grid-template-columns:repeat(3,minmax(0,210px));justify-content:center;gap:0;margin-top:34px}
+.stats--pearls .stat{aspect-ratio:1;border-radius:50%;display:grid;place-content:center;text-align:center;margin:0 -8px;padding:10px;
+  background:radial-gradient(circle at 30% 22%,#fff 0 11%,rgba(255,255,255,.72) 30%,rgba(255,215,222,.55) 72%,rgba(255,170,190,.5));box-shadow:0 18px 36px rgba(210,90,120,.2),inset 0 -12px 22px rgba(255,170,190,.3)}
+.stats--pearls .stat:nth-child(2){transform:translateY(-14px) scale(1.14);z-index:1}
+.stats--pearls .stat b{font-size:34px;color:var(--teal-d)}.stats--pearls .stat span{font-size:12.5px}
+.tabs--seg{justify-content:center;width:max-content;max-width:100%;margin:48px auto 0;background:rgba(255,255,255,.55);padding:6px;border-radius:999px;border:2px solid #fff}
+.tabs--seg .tab.on{background:linear-gradient(180deg,#fff,#ffeef1);color:var(--teal-d)}
+.pool__grid{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;text-align:left;margin-top:30px}
+.pool__grid .pearl{width:min(340px,100%)}.pool__grid .empty,.pool__grid .skel{width:100%}.pool__grid .skel{height:190px}
+.pearl{border-radius:38px;padding:22px;background:linear-gradient(160deg,rgba(255,255,255,.9),rgba(255,236,240,.62));border:2px solid #fff;box-shadow:0 16px 34px rgba(210,90,120,.16),inset 0 3px 0 #fff;transition:transform .45s cubic-bezier(.3,1.9,.45,1)}
+.pearl:hover{transform:translateY(-7px) scale(1.02)}
+.pearl__link{display:block}
+.pearl__orbs{display:flex;align-items:center;height:80px}
+.pearl__orbs i{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-family:var(--disp);font-weight:700;font-size:26px;color:#fff;border:3px solid #fff;
+  background:radial-gradient(circle at 32% 24%,rgba(255,255,255,.9) 0 11%,rgba(255,255,255,0) 36%),hsl(var(--h) 78% 62%);box-shadow:0 10px 18px rgba(0,0,0,.14)}
+.pearl__orbs i+i{width:76px;height:76px;margin-left:-24px;font-size:30px}
+.pearl.rejected .pearl__orbs i{filter:grayscale(.55);opacity:.85}.pearl.rejected .pearl__orbs i+i{width:62px;height:62px;margin-left:8px;font-size:26px}
+.pearl__t{font-family:var(--disp);font-weight:700;font-size:23px;margin-top:12px}
+.pearl__t span{color:var(--teal-d);padding:0 4px}
+.pearl__m{margin-top:4px;font-size:13px;line-height:1.45;color:var(--soft);font-weight:700}
+.pearl__f{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:13px;font-weight:700;color:var(--soft)}
+.pearl__act{display:flex;gap:8px;margin-top:14px}
+
+@media (max-width:900px){
+  .tide{grid-template-columns:1fr;gap:28px}.tide__side{position:static}
+  .stats--pearls{grid-template-columns:repeat(3,minmax(0,1fr))}.stats--pearls .stat b{font-size:24px}
+}
+@media (max-width:700px){
+  .cur__steps::before{left:30px}
+  .cur__step{grid-template-columns:1fr}
+  .cur__n{left:30px;width:52px;height:52px;font-size:21px}
+  .cur__step:nth-child(odd) .cur__card,.cur__step:nth-child(even) .cur__card{grid-column:1;margin:0 0 0 70px;text-align:left}
+  .orb{width:min(300px,92%)}
+}
+@media (max-width:560px){
+  .tide__pair{grid-template-columns:1fr 1fr}.tide__mid{grid-column:1/-1;grid-row:2;grid-auto-flow:column;padding-top:0;justify-content:center}
+  .tide__item{padding:20px 16px 16px}.stats--pearls .stat span{font-size:10.5px}
+}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}
+</script>
+</head>
+<body data-route="room">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    
+    <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="8" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10"/></filter>
+  </defs>
+</svg>
+
+<h1 class="sr">Absorb: nothing evaporates, it just joins the pool.</h1>
+
+<!-- ROOM -->
+<main class="room" aria-label="Absorb deep">
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <a class="room__brand" href="#/" aria-label="Absorb"><span class="mk" role="img" aria-hidden="true"></span><span>Absorb</span></a>
+  <div class="room__title" aria-hidden="true">
+    <div class="ttl">Nothing<br>evaporates.<span>It just joins the pool.</span></div>
+    <p>Got a coin that's drying up? Let it flow into a living one. Holders on both sides vote, and the whole community keeps its splash instead of fading out.</p>
+  </div>
+  <button class="sound" id="sound" aria-pressed="false" aria-label="Turn sound on">Sound off</button>
+  <div class="counter">Merged <b id="cnt">0</b></div>
+  <ul class="keys" id="keys" aria-label="Pages">
+    <li><button class="key" data-go="absorb" style="--c:#8fe6e0">Drop in</button></li>
+    <li><button class="key" data-go="vote" style="--c:#ffe28a">Ripple</button></li>
+    <li><button class="key" data-go="how" style="--c:#8fd0ff">How</button></li>
+    <li><button class="key" data-go="board" style="--c:#ffb199">Pool</button></li>
+    <li><button class="key" data-go="x" style="--c:#c0aaff">X</button></li>
+  </ul>
+  <p class="hint">Pick a bubble &middot; or tap the water to drop in a coin</p>
+  <div class="tip" id="tip" aria-hidden="true"></div>
+</main>
+<div class="fade" id="fade" aria-hidden="true"></div>
+
+<!-- CHROME -->
+<header class="chrome" id="chrome">
+  <a class="brand" href="#/" aria-label="Back to the deep"><span class="mk" role="img" aria-hidden="true"></span><span>Absorb</span></a>
+  <nav class="nav" id="nav">
+    <a href="#/absorb" data-r="absorb">Drop in</a>
+    <a href="#/vote" data-r="vote">Ripple</a>
+    <a href="#/how" data-r="how">How it works</a>
+    <a href="#/board" data-r="board">Pool</a>
+  </nav>
+  <button class="wallet" id="wallet">Connect</button>
+</header>
+
+<!-- ABSORB TOOL -->
+<section class="page" data-page="absorb" id="page-absorb" aria-label="Absorb">
+  <div class="main">
+    <span class="label">Drop in</span>
+    <h2 class="h"><span>One fading coin drops in.</span><span class="d">One living coin swells.</span></h2>
+    <ol class="flow" id="flow"><li class="on"><i>1</i>Pick two coins</li><li><i>2</i>Check the terms</li><li><i>3</i>Holders vote</li></ol>
+    <p class="lede">Paste the target (the drying coin that joins) and the host (the living coin that takes it in). Absorb reads live market data and sets the terms.</p>
+
+    <form class="mt" id="form" autocomplete="off">
+      <label class="field"><span class="field__l"><span>Target (drying coin)</span></span>
+        <input class="input" id="caT" placeholder="Contract address" spellcheck="false"></label>
+      <button type="button" class="swap" id="swapBtn" aria-label="Swap coins">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg>
+      </button>
+      <label class="field"><span class="field__l"><span>Host (living coin)</span></span>
+        <input class="input" id="caH" placeholder="Contract address" spellcheck="false"></label>
+    </form>
+
+    <div class="sliders">
+      <label class="field"><span class="field__l"><span>Swap discount for target holders</span><b id="discV">20%</b></span>
+        <input type="range" id="disc" min="0" max="40" value="20"></label>
+      <label class="field"><span class="field__l"><span>Vesting after day one</span><b id="vestV">7 days</b></span>
+        <input type="range" id="vest" min="0" max="30" value="7"></label>
+    </div>
+
+    <div class="go">
+      <button class="btn btn--p" id="calcBtn"><span>Get terms</span><span class="ar">&rarr;</span></button>
+    </div>
+    <p class="msg" id="msg"></p>
+    <div class="ph" id="ph"><b>Your terms will float up here</b>Paste a drying coin and a living coin above, then press Get terms.</div>
+
+    <div class="res" id="res">
+      <div class="res__grid">
+        <div class="coin" id="coinT"></div>
+        <div class="viz">
+          <svg viewBox="0 0 400 200" id="viz" aria-hidden="true"></svg>
+          <div class="viz__cap" id="vizCap">Absorbing</div>
+        </div>
+        <div class="coin" id="coinH"></div>
+      </div>
+      <div class="out" id="out"></div>
+      <div class="terms" id="terms"></div>
+      <div class="gate" id="gate"></div>
+      <div class="act">
+        <button class="btn btn--p" id="proposeBtn"><span>Propose the merge</span><span class="ar">&rarr;</span></button>
+        <span class="msg" id="pMsg" style="margin:0"></span>
+      </div>
+      <div class="trust"><div><i>✓</i>Never moves your funds</div><div><i>✓</i>You only sign messages</div><div><i>✓</i>Votes last 24 hours, both sides must agree</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VOTE -->
+<section class="page" data-page="vote" id="page-vote" aria-label="Ripple">
+  <div class="main tide">
+    <aside class="tide__side">
+      <span class="label">Ripple</span>
+      <h2 class="h"><span>Open</span><span class="d">ripples.</span></h2>
+      <p class="lede">Holders of both coins decide together, one ripple at a time. Your voting weight is your token balance, checked on-chain.</p>
+      <ul class="tide__rules"><li>24 hour vote</li><li>Both sides need a majority</li><li id="ruleQ">5% of supply must vote</li></ul>
+      <div class="stats stats--orbs" id="statsVote"></div>
+      <div class="tide__safe"><span>✓ Never moves your funds</span><span>✓ You only sign messages</span><span>✓ Balances are read on-chain</span></div>
+    </aside>
+    <div class="list tide__list" id="listVote"></div>
+  </div>
+</section>
+<!-- HOW -->
+<section class="page" data-page="how" id="page-how" aria-label="How it works">
+  <div class="main cur">
+    <div class="cur__hero">
+      <span class="label">How it works</span>
+      <h2 class="h"><span>Two drops,</span><span class="d">one pool.</span></h2>
+      <p class="lede">Absorb is Merge's rescue cousin. It isn't two equals combining: a smaller, drying coin flows into a stronger one, with protections for the host.</p>
+      <div class="how-anim">
+        <svg viewBox="0 0 400 220" aria-hidden="true">
+          <g filter="url(#goo)" fill="#38c6e6">
+            <circle cx="250" cy="110" r="58"/>
+            <circle cx="60" cy="110" r="22"><animate attributeName="cx" values="60;196;196;60" keyTimes="0;.5;.78;1" dur="4.6s" repeatCount="indefinite" calcMode="spline" keySplines=".6 0 .2 1;0 0 1 1;.6 0 .2 1"/><animate attributeName="r" values="22;12;0;22" keyTimes="0;.5;.78;1" dur="4.6s" repeatCount="indefinite"/></circle>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <ol class="cur__steps">
+      <li class="cur__step"><span class="cur__n" style="--c:var(--mint)">1</span><div class="cur__card"><div class="step__t">Drop in</div><p class="step__d">Anyone proposes that a drying coin flow into a stronger one. The terms are computed from live market data.</p></div></li>
+      <li class="cur__step"><span class="cur__n" style="--c:var(--butter)">2</span><div class="cur__card"><div class="step__t">Ripple</div><p class="step__d">Holders of both coins vote for 24 hours, weighted by on-chain token balance. Both sides need a majority and a quorum.</p></div></li>
+      <li class="cur__step"><span class="cur__n" style="--c:var(--sky)">3</span><div class="cur__card"><div class="step__t">Merge</div><p class="step__d">The target's liquidity pours into the host's pool. Target holders swap into the host at the discounted ratio.</p></div></li>
+      <li class="cur__step"><span class="cur__n" style="--c:var(--peach)">4</span><div class="cur__card"><div class="step__t">Settle</div><p class="step__d">The target coin is retired and its page reads "absorbed into $HOST". The community keeps its identity and its water.</p></div></li>
+    </ol>
+    <div class="cur__orbs">
+      <div class="orb"><b>Swap discount</b>Target holders receive host tokens below the fair ratio, so existing host holders aren't diluted at full price.</div>
+      <div class="orb"><b>Vesting</b>Only a quarter of absorbed tokens unlock at execution. The rest trickle out linearly, so they can't all flood the host's pool on day one.</div>
+      <div class="orb"><b>Size gate</b>A target can't exceed half of the host's market cap, so a host is never swallowed by something bigger.</div>
+    </div>
+    <div class="risk bottle"><span class="bottle__i">!</span><div><b>Be honest about the currents.</b> Someone could buy a dried-up coin cheap and push an absorption to dump on host holders. The discount, vesting, size gate and pre-proposal balance snapshots are the defenses. An absorption is a migration, not a guarantee the new tokens hold value.</div></div>
+  </div>
+</section>
+<!-- BOARD -->
+<section class="page" data-page="board" id="page-board" aria-label="Pool">
+  <div class="main pool">
+    <div class="pool__head">
+      <span class="label">Pool</span>
+      <h2 class="h"><span>The pool of</span><span class="d">who got absorbed.</span></h2>
+      <div class="stats stats--pearls" id="statsBoard"></div>
+    </div>
+    <div class="tabs tabs--seg" id="tabs">
+      <button class="tab on" data-t="absorbed">Merged</button>
+      <button class="tab" data-t="rejected">Rejected</button>
+    </div>
+    <div class="list pool__grid" id="listBoard"></div>
+  </div>
+</section>
+<section class="page" data-page="p" id="page-p" aria-label="Proposal">
+  <div class="main"><a class="back" href="#/board">&larr; All absorptions</a><div id="propBody"></div></div>
+</section>
+
+<div class="cover" id="cover"><span>Diving in…</span><i class="bar"></i></div>
+<div class="wm" id="wm" role="dialog" aria-modal="true" aria-label="Connect a wallet"><div class="wm__c">
+  <button class="wm__x" id="wmClose" aria-label="Close">&times;</button>
+  <h3>Connect a wallet</h3><p>Pick a Solana wallet. Absorb only reads your address and token balances, and asks you to sign messages for proposals and votes. It never moves funds.</p>
+  <div class="wm__l" id="wmList"></div></div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+window.ABSORB_CONFIG = {
+  rpc: "https://api.mainnet-beta.solana.com",   // Solana RPC used to read balances and supply (swap in your own for speed)
+  quorum: 0.05,               // share of a coin's supply that must vote on each side
+  api: "",                    // e.g. "https://api.absorb.fun" -> POST /proposals
+  x: "https://x.com",         // replace with the Absorb X profile
+  eyes: true,                 // set false to remove the blob's face
+  sizeGate: 0.5,              // target market cap may be at most 50% of host
+  dayOneUnlock: 0.25,
+  hostFeeShare: 0.10
+};
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { MarchingCubes } from 'three/addons/objects/MarchingCubes.js';
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const CFG = window.ABSORB_CONFIG || {};
+const coverStart = performance.now();
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const short = a => a && a.length > 10 ? a.slice(0,4) + '…' + a.slice(-4) : (a || '');
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+};
+let toastT;
+function toast(t){ const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove('on'), 2600); }
+const openX = () => window.open(CFG.x || 'https://x.com', '_blank', 'noopener');
+
+/* ================= SOUND (off by default) ================= */
+const Sound = (() => {
+  let ctx, on = false;
+  function ensure(){ if(!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)(); if(ctx.state === 'suspended') ctx.resume().catch(() => {}); }
+  function tone(f, d, v, type, slideTo){
+    if(!on) return; ensure();
+    const t = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = type || 'sine'; o.frequency.setValueAtTime(f, t);
+    if(slideTo) o.frequency.exponentialRampToValueAtTime(slideTo, t + d);
+    g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(.0001, t + d);
+    o.connect(g); g.connect(ctx.destination); o.start(t); o.stop(t + d + .02);
+  }
+  return {
+    get on(){ return on; },
+    set(v){ on = v; if(v) ensure(); },
+    blip(f = 640, d = .09, v = .05){ tone(f, d, v, 'sine', f*1.5); },
+    absorb(){ tone(300, .28, .09, 'sine', 700); tone(900, .14, .03, 'triangle'); },
+    chime(){ tone(523, .5, .05); setTimeout(() => tone(784, .6, .05), 80); }
+  };
+})();
+$('#sound').addEventListener('click', e => {
+  e.stopPropagation();
+  const v = !Sound.on; Sound.set(v);
+  $('#sound').textContent = v ? 'Sound on' : 'Sound off';
+  $('#sound').setAttribute('aria-pressed', v);
+  $('#sound').setAttribute('aria-label', v ? 'Turn sound off' : 'Turn sound on');
+  if(v) Sound.chime();
+});
+
+/* =====================================================
+   ROOM (three.js): an underwater world: seabed, kelp, light shafts, bubbles
+   ===================================================== */
+let running = true, sceneReady = false;
+const KEYDEFS = [
+  { go: 'absorb', label: 'DROP IN', tip: 'Get merge terms', col: '#8fe6e0' },
+  { go: 'vote',   label: 'RIPPLE', tip: 'Open votes',       col: '#ffe28a' },
+  { go: 'how',    label: 'HOW',    tip: 'How it works',     col: '#8fd0ff' },
+  { go: 'board',  label: 'POOL',   tip: 'The record',       col: '#ffb199' },
+  { go: 'x',      label: 'X',      tip: 'Follow on X',      col: '#c0aaff' }
+];
+const room = {
+  go: r => { if(r === 'x') openX(); else location.hash = '#/' + r; },
+  back: () => {}, intro: () => {}, select: () => {}, busy: false
+};
+
+async function buildRoom(){
+  const canvas = $('#stage');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.toneMapping = THREE.NeutralToneMapping;
+  renderer.toneMappingExposure = 1.0;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+  try { await Promise.race([document.fonts.load('700 64px Fredoka'), new Promise(r => setTimeout(r, 900))]); } catch(e){}
+
+  const HAZE = 0x1a7fb4;
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(HAZE);
+  scene.fog = new THREE.Fog(HAZE, 12, 62);
+
+  const camera = new THREE.PerspectiveCamera(46, 1, .1, 160);
+  const BY = 3.3;                                     // jellyfish bell centre height
+  const HOME = { pos: new THREE.Vector3(0, 3.2, 10.5), look: new THREE.Vector3(0, 2.7, 1.0), fov: 46 };
+  const ZOOM = { pos: new THREE.Vector3(0, BY + .1, 4.0), look: new THREE.Vector3(0, BY, 0), fov: 40 };
+  const cam = { pos: ZOOM.pos.clone(), look: ZOOM.look.clone(), fov: 40 };
+  let settled = false;
+
+  /* ---- shared clay look ---- */
+  const bumpCv = document.createElement('canvas'); bumpCv.width = bumpCv.height = 256;
+  { const x = bumpCv.getContext('2d'); x.fillStyle = '#808080'; x.fillRect(0, 0, 256, 256);
+    for(let i = 0; i < 900; i++){ const v = 90 + Math.random()*80|0; x.fillStyle = `rgba(${v},${v},${v},.5)`; x.beginPath(); x.arc(Math.random()*256, Math.random()*256, 2 + Math.random()*7, 0, 7); x.fill(); } }
+  const clayBump = new THREE.CanvasTexture(bumpCv); clayBump.wrapS = clayBump.wrapT = THREE.RepeatWrapping;
+  const clay = (c, r = .92) => new THREE.MeshStandardMaterial({ color: c, roughness: r, metalness: 0, bumpMap: clayBump, bumpScale: .5 });
+  const glowTex = () => {
+    const c = document.createElement('canvas'); c.width = c.height = 64;
+    const x = c.getContext('2d'), g = x.createRadialGradient(32, 32, 0, 32, 32, 32);
+    g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.4, 'rgba(255,255,255,.5)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+    x.fillStyle = g; x.fillRect(0, 0, 64, 64);
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+  };
+
+  /* ---- sky dome (+ matching environment for the liquid's reflections) ---- */
+  const skyMat = () => new THREE.ShaderMaterial({
+    side: THREE.BackSide, depthWrite: false, fog: false,
+    uniforms: { top: { value: new THREE.Color(0x8fe8f8) }, mid: { value: new THREE.Color(0x2c9fd2) }, hor: { value: new THREE.Color(0x1a7fb4) } },
+    vertexShader: 'varying vec3 vP;void main(){vP=normalize(position);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+    fragmentShader: 'uniform vec3 top;uniform vec3 mid;uniform vec3 hor;varying vec3 vP;void main(){float h=clamp(vP.y,0.,1.);vec3 c=mix(hor,mid,smoothstep(0.,.3,h));c=mix(c,top,smoothstep(.25,.95,h));gl_FragColor=vec4(c,1.);\n#include <tonemapping_fragment>\n#include <colorspace_fragment>\n}'
+  });
+  const sky = new THREE.Mesh(new THREE.SphereGeometry(100, 32, 16), skyMat());
+  sky.renderOrder = -10; scene.add(sky);
+  {
+    const envScene = new THREE.Scene();
+    envScene.add(new THREE.Mesh(new THREE.SphereGeometry(50, 32, 16), skyMat()));
+    const g = new THREE.Mesh(new THREE.CircleGeometry(80, 32), new THREE.MeshBasicMaterial({ color: 0xd9c08a }));
+    g.rotation.x = -Math.PI/2; g.position.y = -4; envScene.add(g);
+    const sunE = new THREE.Mesh(new THREE.SphereGeometry(6, 16, 12), new THREE.MeshBasicMaterial({ toneMapped: false }));
+    sunE.material.color.setRGB(9, 8, 5.5); sunE.position.set(6, 40, -6); envScene.add(sunE);
+    const pm = new THREE.PMREMGenerator(renderer);
+    scene.environment = pm.fromScene(envScene, .03).texture;
+    scene.environmentIntensity = .85;
+  }
+  /* ---- light shafts from the surface ---- */
+  const shafts = [];
+  {
+    const c = document.createElement('canvas'); c.width = 64; c.height = 256; const x = c.getContext('2d');
+    const gy = x.createLinearGradient(0, 0, 0, 256); gy.addColorStop(0, 'rgba(255,255,255,.95)'); gy.addColorStop(1, 'rgba(255,255,255,0)');
+    x.fillStyle = gy; x.fillRect(0, 0, 64, 256);
+    x.globalCompositeOperation = 'destination-in';
+    const gx = x.createLinearGradient(0, 0, 64, 0); gx.addColorStop(0, 'rgba(0,0,0,0)'); gx.addColorStop(.5, 'rgba(0,0,0,1)'); gx.addColorStop(1, 'rgba(0,0,0,0)');
+    x.fillStyle = gx; x.fillRect(0, 0, 64, 256);
+    const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+    for(let i = 0; i < 8; i++){
+      const m = new THREE.Mesh(new THREE.PlaneGeometry(2.6 + Math.random()*3, 30), new THREE.MeshBasicMaterial({ map: tex, transparent: true, opacity: .16, blending: THREE.AdditiveBlending, depthWrite: false, fog: false, side: THREE.DoubleSide, color: 0xd8fbff }));
+      m.position.set(-26 + i*7.5 + Math.random()*3, 12, -10 - Math.random()*24); m.rotation.z = .32; shafts.push(m); scene.add(m);
+    }
+  }
+
+  /* ---- lights ---- */
+  scene.add(new THREE.HemisphereLight(0xbff4ff, 0xe3c88e, 1.1));
+  const sunLight = new THREE.DirectionalLight(0xe0f8ff, 2.3);
+  sunLight.position.set(-9, 13, 7); sunLight.castShadow = true;
+  sunLight.shadow.mapSize.set(2048, 2048); sunLight.shadow.bias = -.0004; sunLight.shadow.normalBias = .03;
+  Object.assign(sunLight.shadow.camera, { left: -11, right: 11, top: 11, bottom: -11, near: 1, far: 45 });
+  scene.add(sunLight);
+  const fillLight = new THREE.DirectionalLight(0x8fdcff, .6); fillLight.position.set(10, 5, 8); scene.add(fillLight);
+
+  /* ---- the deep: sandy seabed with caustics, kelp, coral ---- */
+  const RIP_N = 6, rip = Array.from({ length: RIP_N }, () => new THREE.Vector4(0, 0, -99, 0));
+  let ripI = 0, tNow = 0;
+  const ripple = (x, z, amp = 1) => { rip[ripI].set(x, z, tNow, amp); ripI = (ripI + 1) % RIP_N; };
+  const floorMat = new THREE.ShaderMaterial({
+    uniforms: { uTime: { value: 0 }, uRip: { value: rip }, uFog: { value: scene.fog.color }, uNear: { value: scene.fog.near }, uFar: { value: scene.fog.far } },
+    vertexShader: `
+      varying vec3 vW; varying float vD;
+      void main(){ vec4 w = modelMatrix * vec4(position, 1.); vW = w.xyz; vec4 mv = viewMatrix * w; vD = -mv.z; gl_Position = projectionMatrix * mv; }`,
+    fragmentShader: `
+      uniform float uTime; uniform vec4 uRip[${RIP_N}]; uniform vec3 uFog; uniform float uNear; uniform float uFar;
+      varying vec3 vW; varying float vD;
+      void main(){
+        vec2 p = vW.xz; float t = uTime, r = length(p);
+        vec3 sand = mix(vec3(.80,.62,.36), vec3(.30,.48,.46), smoothstep(5., 38., r));
+        sand *= .92 + .08*(sin(p.x*.9 + sin(p.y*.5)*2.)*.5 + .5);
+        float c1 = sin(p.x*1.6 + t*.7 + sin(p.y*1.2 + t*.4)*1.5), c2 = sin(p.y*1.8 - t*.6 + sin(p.x*1.0 - t*.35)*1.5);
+        float caus = pow(1. - abs(c1*c2), 7.);
+        vec3 c = sand + vec3(.55,.85,1.)*caus*.5*exp(-r*.035);
+        float h = 0.;
+        for(int i = 0; i < ${RIP_N}; i++){
+          vec4 q = uRip[i]; float age = t - q.z;
+          if(age > 0. && age < 5.){
+            float f = length(p - q.xy) - age*2.6;
+            h += sin(f*7.)*exp(-abs(f)*1.6)*exp(-age*.7)*q.w;
+          }
+        }
+        c += vec3(.7,.95,1.)*h*.22;
+        c = mix(c, uFog, smoothstep(uNear, uFar, vD));
+        gl_FragColor = vec4(c, 1.);
+        #include <tonemapping_fragment>
+        #include <colorspace_fragment>
+      }`
+  });
+  const floor = new THREE.Mesh(new THREE.CircleGeometry(140, 96), floorMat);
+  floor.rotation.x = -Math.PI/2; scene.add(floor);
+  [[-34, -6, -56, 38, 0x2f93b8], [26, -8, -62, 44, 0x2a86ad], [-70, -10, -44, 30, 0x3a9fc0], [64, -6, -40, 30, 0x2d8aae], [0, -12, -80, 56, 0x3aa3c4]].forEach(([x, y, z, r, c]) => {
+    const h = new THREE.Mesh(new THREE.SphereGeometry(r, 32, 16), clay(c, 1)); h.scale.y = .32; h.position.set(x, y, z); scene.add(h);
+  });
+  let rnd = 5; const R = () => (rnd = (rnd*16807) % 2147483647) / 2147483647;
+  const clearZone = (x, z) => Math.hypot(x, z) < 8.5;
+  {
+    // tube corals
+    const tones = [0xff8fb1, 0xffa66b, 0xb79cff, 0xffd96b, 0xff7a8a];
+    [[-9, -6], [-13, -2], [-17, -10], [9, -7], [14, -3], [17, -11], [-6, -16], [5, -18], [-20, -18], [21, -17], [0, -26], [-12, -24], [13, -25], [-11, 5], [12, 4]].forEach(([x, z], i) => {
+      const g = new THREE.Group(), m = clay(tones[i % tones.length], .75), n = 4 + Math.floor(R()*3);
+      for(let k = 0; k < n; k++){
+        const h = .7 + R()*1.5, a = R()*6.28, d = R()*.6, tube = new THREE.Mesh(new THREE.CylinderGeometry(.16, .24, h, 14), m);
+        tube.position.set(Math.cos(a)*d, h/2, Math.sin(a)*d); tube.rotation.set((R() - .5)*.3, 0, (R() - .5)*.3); g.add(tube);
+        const cap = new THREE.Mesh(new THREE.SphereGeometry(.17, 14, 10), m); cap.position.set(tube.position.x, h, tube.position.z); g.add(cap);
+      }
+      g.position.set(x, 0, z); g.scale.setScalar(.9 + R()*.8); g.rotation.y = R()*6; scene.add(g);
+    });
+  }
+  const kelpMat = new THREE.ShaderMaterial({
+    side: THREE.DoubleSide,
+    uniforms: {
+      uTime: { value: 0 }, uBase: { value: new THREE.Color(0x167a6a) }, uTip: { value: new THREE.Color(0x8af0b0) },
+      uFogColor: { value: scene.fog.color }, uFogNear: { value: scene.fog.near }, uFogFar: { value: scene.fog.far }
+    },
+    vertexShader: `
+      uniform float uTime; uniform float uFogNear; uniform float uFogFar;
+      varying float vH; varying float vFog; varying float vShade;
+      float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+      void main(){
+        vec3 p = position; vH = p.y; p.x *= 1. - p.y*.75;
+        vec3 base = instanceMatrix[3].xyz;
+        float hs = length(instanceMatrix[1].xyz);
+        vec4 wp = instanceMatrix * vec4(p, 1.);
+        float bend = p.y * p.y * hs * .45;
+        wp.x += (sin(uTime*.9 + base.x*.6 + base.z*.5)*.55 + sin(uTime*1.7 + base.x*1.3)*.15) * bend;
+        wp.z += cos(uTime*.7 + base.x*.5 + base.z*.7) * .3 * bend;
+        vShade = hash(base.xz);
+        vec4 mv = viewMatrix * wp;
+        vFog = smoothstep(uFogNear, uFogFar, -mv.z);
+        gl_Position = projectionMatrix * mv;
+      }`,
+    fragmentShader: `
+      uniform vec3 uBase; uniform vec3 uTip; uniform vec3 uFogColor;
+      varying float vH; varying float vFog; varying float vShade;
+      void main(){
+        vec3 c = mix(uBase, uTip, smoothstep(0., 1., vH)) * (.8 + .35*vShade);
+        c = mix(c, uFogColor, vFog);
+        gl_FragColor = vec4(c, 1.);
+        #include <tonemapping_fragment>
+        #include <colorspace_fragment>
+      }`
+  });
+  {
+    const CL = 150, PER = 6, N = CL*PER, kelp = new THREE.InstancedMesh(new THREE.PlaneGeometry(.26, 1, 1, 7).translate(0, .5, 0), kelpMat, N), o = new THREE.Object3D();
+    let n = 0;
+    for(let c = 0; c < CL; c++){
+      let cx, cz;
+      do { const r = 8.5 + 34*Math.pow(Math.random(), .75), a = Math.random()*Math.PI*2; cx = Math.cos(a)*r; cz = 2 + Math.sin(a)*r; } while(cz > 9 || clearZone(cx, cz));
+      for(let k = 0; k < PER; k++){
+        const h = 1.4 + Math.random()*3.2;
+        o.position.set(cx + (Math.random() - .5)*1.4, 0, cz + (Math.random() - .5)*1.4); o.rotation.set(0, Math.random()*Math.PI, 0); o.scale.set(.9 + Math.random()*.9, h, 1);
+        o.updateMatrix(); kelp.setMatrixAt(n++, o.matrix);
+      }
+    }
+    kelp.frustumCulled = false; scene.add(kelp);
+  }
+
+  /* ---- sandy mound under the drop + shells ---- */
+  const ped = new THREE.Mesh(new THREE.SphereGeometry(1, 48, 32), clay(0xffd49a));
+  ped.scale.set(2.5, .85, 2.5); ped.position.y = .15; ped.castShadow = ped.receiveShadow = true; scene.add(ped);
+  for(let i = 0; i < 12; i++){
+    const a = i/12*Math.PI*2 + Math.random()*.3, r = 3.3 + Math.random()*.6;
+    const p = new THREE.Mesh(new THREE.SphereGeometry(.22 + Math.random()*.18, 14, 10), clay([0xfdebd3, 0xf7d6d0, 0xe3f4f6][i%3]));
+    p.scale.y = .6; p.position.set(Math.cos(a)*r, .08, Math.sin(a)*r); scene.add(p);
+  }
+
+  /* ---- THE LIQUID: a marching-cubes blob that swallows droplets ---- */
+  const narrow = () => innerWidth/innerHeight < .9;
+  const S = 4.2, ISO = 80, SUB = 12, RES = innerWidth < 700 ? 40 : 56;
+  const strengthFor = r => r*r*(ISO + SUB);
+  const nW = w => w/(2*S) + .5, rW = r => r*2*S;
+  const blobMat = new THREE.MeshPhysicalMaterial({
+    color: 0x62e3f7, emissive: 0x1190b8, emissiveIntensity: .45, roughness: .06, metalness: 0,
+    clearcoat: 1, clearcoatRoughness: .05, ior: 1.45, envMapIntensity: 1.5, sheen: 1, sheenColor: new THREE.Color(0xc4f1ff)
+  });
+  const mc = new MarchingCubes(RES, blobMat, false, false, 120000);
+  mc.isolation = ISO; mc.position.set(0, BY, 0); mc.scale.setScalar(S);
+  mc.castShadow = true; mc.frustumCulled = false; scene.add(mc);
+  const blobHit = new THREE.Mesh(new THREE.SphereGeometry(1.6, 12, 8), new THREE.MeshBasicMaterial({ visible: false }));
+  blobHit.position.set(0, BY, 0); scene.add(blobHit);
+
+  /* ---- jellyfish: face, tentacles, oral arms, burps ---- */
+  const bobOf = t => Math.sin(t*1.1)*.14;
+  const eyes = new THREE.Group(); eyes.position.set(0, BY, 0); eyes.visible = CFG.eyes !== false; scene.add(eyes);
+  const eyeM = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: .3 });
+  const pupM = new THREE.MeshStandardMaterial({ color: 0x22160f, roughness: .25 });
+  const eyeParts = [-1, 1].map(s => {
+    const g = new THREE.Group(); g.position.set(s*.5, .34, 1.36);
+    const w = new THREE.Mesh(new THREE.SphereGeometry(.32, 24, 16), eyeM);
+    const p = new THREE.Mesh(new THREE.SphereGeometry(.18, 16, 12), pupM); p.position.set(0, 0, .23);
+    const sh = new THREE.Mesh(new THREE.SphereGeometry(.05, 10, 8), new THREE.MeshBasicMaterial({ color: 0xffffff })); sh.position.set(.06, .07, .18); p.add(sh);
+    g.add(w, p); eyes.add(g); return { g, p };
+  });
+  const cheekM = new THREE.MeshBasicMaterial({ color: 0xff8fb1, transparent: true, opacity: .55, depthWrite: false });
+  [-1, 1].forEach(s => { const c = new THREE.Mesh(new THREE.SphereGeometry(.2, 16, 10), cheekM); c.scale.set(1.2, .62, .3); c.position.set(s*.9, -.06, 1.36); c.rotation.y = s*.6; eyes.add(c); });
+  const mouthM = new THREE.MeshStandardMaterial({ color: 0x7a2f48, roughness: .5 });
+  const smile = new THREE.Mesh(new THREE.TorusGeometry(.22, .04, 10, 28, Math.PI), mouthM);
+  smile.rotation.z = Math.PI; smile.position.set(0, .0, 1.66); eyes.add(smile);
+  const maw = new THREE.Mesh(new THREE.SphereGeometry(1, 22, 14), new THREE.MeshStandardMaterial({ color: 0x4d1230, roughness: .6 }));
+  maw.position.set(0, -.16, 1.62); maw.scale.set(.2, .01, .08); eyes.add(maw);
+  const tongue = new THREE.Mesh(new THREE.SphereGeometry(1, 14, 10), new THREE.MeshStandardMaterial({ color: 0xff7fa6, roughness: .5 }));
+  tongue.position.set(0, -.26, 1.66); tongue.scale.set(.1, .01, .05); eyes.add(tongue);
+
+  const TENT = 8, TSEG = 16, ARMS = 4, ASEG = 10, dummy = new THREE.Object3D();
+  const tentacles = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 12, 9), new THREE.MeshPhysicalMaterial({
+    color: 0x9fe9ff, emissive: 0x1190b8, emissiveIntensity: .4, roughness: .12, clearcoat: 1, transparent: true, opacity: .82, envMapIntensity: 1.3 }), TENT*TSEG);
+  const arms = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 12, 9), new THREE.MeshPhysicalMaterial({
+    color: 0xffb7e0, emissive: 0xc2407e, emissiveIntensity: .25, roughness: .2, clearcoat: 1, transparent: true, opacity: .9 }), ARMS*ASEG);
+  tentacles.frustumCulled = arms.frustumCulled = false; scene.add(tentacles, arms);
+  function updateTentacles(t, bob){
+    const sq = Math.sin(t*2.0)*.5 + .5, rimR = rW(.15 - sq*.02), rimY = BY + bob + rW(.45 + sq*.012 - .5);
+    for(let i = 0; i < TENT; i++){
+      const a = i/TENT*Math.PI*2 + t*.15, L = 2.0 + (i%3)*.35, ca = Math.cos(a), sa = Math.sin(a);
+      for(let j = 0; j < TSEG; j++){
+        const u = j/(TSEG - 1), sw = Math.sin(t*1.7 - u*4.2 + i*1.3)*.28*u, sw2 = Math.cos(t*1.3 - u*3.6 + i*.9)*.2*u;
+        const out = rimR*.92 + (.18*(1 - u) + .28*u*sq)*1 ;
+        dummy.position.set(ca*out + sw, rimY - u*L - sq*.22*u, sa*out + sw2);
+        dummy.scale.setScalar(.15*(1 - u*.72) + .035); dummy.updateMatrix(); tentacles.setMatrixAt(i*TSEG + j, dummy.matrix);
+      }
+    }
+    tentacles.instanceMatrix.needsUpdate = true;
+    for(let i = 0; i < ARMS; i++){
+      const a = i/ARMS*Math.PI*2 + .6 - t*.2, ca = Math.cos(a), sa = Math.sin(a), L = 1.5 + (i%2)*.3;
+      for(let j = 0; j < ASEG; j++){
+        const u = j/(ASEG - 1), sw = Math.sin(t*2.4 - u*5 + i*1.7)*.22*u, sw2 = Math.cos(t*2.0 - u*4.4 + i)*.22*u;
+        dummy.position.set(ca*(.3 + u*.12) + sw, rimY + .22 - u*L - sq*.2*u, sa*(.3 + u*.12) + sw2);
+        dummy.scale.setScalar(.21*(1 - u*.7) + .045 + Math.sin(u*14 + i)*.02); dummy.updateMatrix(); arms.setMatrixAt(i*ASEG + j, dummy.matrix);
+      }
+    }
+    arms.instanceMatrix.needsUpdate = true;
+  }
+  // the face sits on the bell's real surface: ray-cast from the front a few times a second
+  const faceRay = new THREE.Raycaster(), faceO = new THREE.Vector3(), faceD = new THREE.Vector3(0, 0, -1);
+  const faceSpots = [[eyeParts[0].g, -.5, .34, -.02], [eyeParts[1].g, .5, .34, -.02], [smile, 0, .0, .03], [maw, 0, -.16, -.02], [tongue, 0, -.26, .02]];
+  const cheeks = eyes.children.filter(c => c.material === cheekM);
+  cheeks.forEach((c, i) => faceSpots.push([c, i ? .9 : -.9, -.06, -.04]));
+  let faceT = 0;
+  function snapFace(dt){
+    faceT -= dt; if(faceT > 0) return; faceT = .08;
+    faceSpots.forEach(([o, x, y, dz]) => {
+      faceO.set(x, eyes.position.y + y, 8); faceRay.set(faceO, faceD);
+      const h = faceRay.intersectObject(mc, false)[0];
+      if(h) o.position.z += (h.point.z + dz - o.position.z)*.5;
+    });
+  }
+  const burps = [];
+  function burp(){
+    for(let k = 0; k < 5; k++){
+      const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: bTex, transparent: true, depthWrite: false, fog: false, opacity: 0 }));
+      sp.position.set((Math.random() - .5)*.3, BY - .2, 2.1); sp.scale.setScalar(.2 + Math.random()*.2);
+      burps.push({ sp, vy: .8 + Math.random()*.7, vx: (Math.random() - .5)*.5, delay: k*.09, age: 0 }); scene.add(sp);
+    }
+  }
+  function stepBurps(dt){
+    for(let i = burps.length - 1; i >= 0; i--){
+      const b = burps[i]; b.delay -= dt; if(b.delay > 0) continue;
+      b.age += dt; b.sp.position.y += b.vy*dt; b.sp.position.x += b.vx*dt + Math.sin(b.age*7)*dt*.2; b.sp.material.opacity = Math.min(1, b.age*5)*Math.max(0, 1 - b.age/1.8);
+      if(b.age > 1.8){ scene.remove(b.sp); b.sp.material.dispose(); burps.splice(i, 1); }
+    }
+  }
+
+  /* ---- droplets (dull "coins") that hop in and become liquid ---- */
+  const dropGeo = new THREE.SphereGeometry(1, 28, 18);
+  const DULL = [0xff6f91, 0xffb02e, 0xa77bff, 0x4da3ff, 0xff7a45, 0xf2e04a].map(c => new THREE.Color(c));
+  const TEAL = new THREE.Color(0x62e3f7);
+  const tintCol = new THREE.Color(0x62e3f7); let tint = 0;
+  const drops = [];
+  let count = 0, pulse = 0, mass = 0, boopX = 0, boopV = 0, spawnIn = .6, gulp = 0;
+  const blobR = () => rW(.165) + pulse*.15 + mass*8 + boopX*.15;
+
+  function spawnDrop(x, z){
+    if(x === undefined){ const a = Math.random()*Math.PI*2, d = 6.4 + Math.random()*2.6; x = Math.cos(a)*d; z = Math.sin(a)*d; if(z < -3) z = -z*.4; }
+    const dist = Math.hypot(x, z) || 1, lim = 7.6;
+    if(dist > lim){ x *= lim/dist; z *= lim/dist; }
+    const rw = .3 + Math.random()*.16, dull = DULL[Math.floor(Math.random()*DULL.length)];
+    const mat = new THREE.MeshPhysicalMaterial({ color: dull.clone(), roughness: .12, clearcoat: 1, clearcoatRoughness: .1, envMapIntensity: 1.1 });
+    const mesh = new THREE.Mesh(dropGeo, mat); mesh.castShadow = true; mesh.scale.setScalar(rw); scene.add(mesh);
+    drops.push({ mesh, mat, dull, rw, x, y: rw, z, ph: Math.random()*6, sw: Math.random() < .5 ? -1 : 1, state: 'walk', rn: rw/(2*S), nx: 0, ny: 0, nz: 0 });
+  }
+  function stepDrops(dt, t){
+    spawnIn -= dt;
+    if(spawnIn <= 0 && drops.length < 4){ spawnDrop(); spawnIn = 2.4 + Math.random()*1.4; }
+    const R = blobR();
+    for(let i = drops.length - 1; i >= 0; i--){
+      const d = drops[i];
+      if(d.state === 'walk'){
+        const dx = -d.x, dz = -d.z, dist2 = Math.hypot(dx, dz) || 1;
+        const near = Math.max(0, Math.min(1, 1 - (dist2 - R)/5.5));
+        const v = 1.0 + near*2.6;
+        d.x += (dx/dist2)*v*dt + (-dz/dist2)*.6*d.sw*dt*(1 - near);
+        d.z += (dz/dist2)*v*dt + (dx/dist2)*.6*d.sw*dt*(1 - near);
+        d.ph += dt*(1.6 + near*2);
+        const gy = d.rw + .8 + Math.sin(d.ph)*.4*(1 - near*.8);
+        d.y = gy + (BY - .3 - gy)*Math.pow(near, 3);
+        d.mesh.position.set(d.x, d.y, d.z);
+        const sq = 1 + Math.sin(d.ph*2)*.07; d.mesh.scale.set(d.rw*(2 - sq), d.rw*sq, d.rw*(2 - sq));
+        d.mat.color.copy(d.dull).lerp(TEAL, near*near*.12);
+        if(Math.hypot(d.x, d.y - BY, d.z) < R + d.rw*1.25){
+          d.state = 'ball'; d.nx = nW(d.x); d.ny = nW(d.y - BY); d.nz = nW(d.z); d.rn = d.rw/(2*S);
+          scene.remove(d.mesh); d.mat.dispose();
+        }
+      } else {
+        const dx = .5 - d.nx, dy = .5 - d.ny, dz = .5 - d.nz, dn = Math.hypot(dx, dy, dz) || 1e-3;
+        const v = (.09 + (1 - Math.min(1, dn/.3))*.14)*dt;
+        d.nx += dx/dn*v; d.ny += dy/dn*v; d.nz += dz/dn*v;
+        if(dn < .05){ drops.splice(i, 1); count++; $('#cnt').textContent = count; pulse = 1; tint = 1; tintCol.copy(d.dull); mass = Math.min(.012, mass + .0025); gulp = 1; burp(); ripple(0, 0, 1.15); Sound.absorb(); }
+      }
+    }
+    tint *= Math.exp(-dt*1.6); blobMat.color.copy(TEAL).lerp(tintCol, tint*.7);
+    pulse *= Math.exp(-dt*4.5); mass = Math.max(0, mass - dt*.0004);
+    boopV += (-boopX*140 - boopV*7)*dt; boopX += boopV*dt;
+  }
+  function updateBlob(t){
+    mc.reset();
+    const beat = Math.sin(t*2.0), sq = beat*.5 + .5;
+    mc.addBall(.5, .525 + beat*.004, .5, strengthFor(.105 + pulse*.012 + mass + boopX*.01), SUB);
+    for(let i = 0; i < 6; i++){
+      const a = i*1.047 + t*.1;
+      mc.addBall(.5 + Math.cos(a)*.1, .515, .5 + Math.sin(a)*.1, strengthFor(.075 + pulse*.005), SUB);
+    }
+    mc.addBall(.5, .565, .5, strengthFor(.07 + pulse*.006), SUB);
+    const sr = .15 - sq*.02, sy = .45 + sq*.012;
+    for(let i = 0; i < 10; i++){
+      const a = i/10*Math.PI*2 + t*.15;
+      mc.addBall(.5 + Math.cos(a)*sr, sy + Math.sin(t*2 + i)*.002, .5 + Math.sin(a)*sr, strengthFor(.05 + pulse*.004), SUB);
+    }
+    for(const d of drops){
+      if(d.state !== 'ball') continue;
+      const dn = Math.hypot(.5 - d.nx, .5 - d.ny, .5 - d.nz);
+      const r = d.rn*Math.max(.15, Math.min(1, (dn - .035)/.09));
+      mc.addBall(d.nx, d.ny, d.nz, strengthFor(r), SUB);
+    }
+    mc.update();
+  }
+
+  /* ---- rising bubbles, three sizes ---- */
+  const bubbleTex = () => {
+    const c = document.createElement('canvas'); c.width = c.height = 64;
+    const x = c.getContext('2d'), g = x.createRadialGradient(32, 32, 6, 32, 32, 30);
+    g.addColorStop(0, 'rgba(255,255,255,.03)'); g.addColorStop(.75, 'rgba(190,240,255,.18)'); g.addColorStop(1, 'rgba(255,255,255,.95)');
+    x.fillStyle = g; x.beginPath(); x.arc(32, 32, 30, 0, 7); x.fill();
+    x.fillStyle = 'rgba(255,255,255,.95)'; x.beginPath(); x.ellipse(21, 20, 6, 4, -.6, 0, 7); x.fill();
+    x.fillStyle = 'rgba(255,255,255,.4)'; x.beginPath(); x.arc(43, 45, 3, 0, 7); x.fill();
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+  };
+  const bTex = bubbleTex();
+  const bubbleLayers = [[110, .28, .5], [60, .55, .8], [22, 1.05, 1.1]].map(([n, size, sp]) => {
+    const pos = new Float32Array(n*3);
+    for(let i = 0; i < n; i++){ pos[i*3] = (Math.random() - .5)*34; pos[i*3+1] = Math.random()*13; pos[i*3+2] = -12 + Math.random()*22; }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    const pts = new THREE.Points(g, new THREE.PointsMaterial({ map: bTex, size, color: 0xffffff, transparent: true, opacity: .9, depthWrite: false, fog: false }));
+    pts.frustumCulled = false; scene.add(pts); return { g, n, sp };
+  });
+
+  /* ---- sizing ---- */
+  function resize(){
+    const w = innerWidth, h = innerHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w/h;
+    const nr = camera.aspect < .9;
+    HOME.fov = nr ? 62 : 46;
+    HOME.pos.set(0, nr ? 4.1 : 3.4, nr ? 14.85 : 11.55);
+    HOME.look.set(0, nr ? 2.9 : 2.7, 1.0);
+    camera.updateProjectionMatrix();
+  }
+  addEventListener('resize', resize); resize();
+
+  /* ---- camera tween ---- */
+  let tw = null;
+  const ease = x => x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3)/2;
+  function tweenTo(to, dur, done){ tw = { fp: cam.pos.clone(), fl: cam.look.clone(), ff: cam.fov, to, t0: performance.now(), dur, done }; }
+
+  /* ---- interaction ---- */
+  const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(9, 9), gPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), gHit = new THREE.Vector3();
+  const ptr = { x: 0, y: 0, sx: 0, sy: 0 };
+  const tip = $('#tip');
+  const inRoom = () => document.body.dataset.route === 'room' && !room.busy;
+  const overBlob = () => { ray.setFromCamera(ndc, camera); return ray.intersectObject(blobHit, false).length > 0; };
+  const groundPt = () => { ray.setFromCamera(ndc, camera); return ray.ray.intersectPlane(gPlane, gHit) ? gHit : null; };
+
+  addEventListener('pointermove', e => {
+    ptr.x = (e.clientX/innerWidth)*2 - 1; ptr.y = (e.clientY/innerHeight)*2 - 1;
+    ndc.set(ptr.x, -ptr.y);
+    if(!inRoom() || !settled || e.target !== canvas){ tip.classList.remove('on'); return; }
+    let label = '', cur = 'default';
+    if(overBlob()){ label = 'Boop!'; cur = 'pointer'; }
+    else if(groundPt()){ label = 'Drop a coin'; cur = 'crosshair'; }
+    canvas.style.cursor = cur;
+    if(label){ tip.textContent = label; tip.style.left = e.clientX + 'px'; tip.style.top = e.clientY + 'px'; tip.classList.add('on'); } else tip.classList.remove('on');
+  });
+  canvas.addEventListener('pointerdown', e => {
+    if(!inRoom() || !settled) return;
+    ndc.set((e.clientX/innerWidth)*2 - 1, -((e.clientY/innerHeight)*2 - 1));
+    if(overBlob()){ boopV += 5; Sound.blip(420, .12, .05); return; }
+    const p = groundPt();
+    if(p){ spawnDrop(p.x, p.z); ripple(p.x, p.z, .9); Sound.blip(780, .06, .04); }
+  });
+  canvas.addEventListener('pointerleave', () => { tip.classList.remove('on'); });
+
+  function go(r){
+    if(room.busy) return;
+    Sound.blip(700, .1, .05); boopV += 4;
+    if(r === 'x'){ openX(); return; }               // opens a new tab, no dive
+    room.busy = true; settled = false; tip.classList.remove('on');
+    const def = KEYDEFS.find(d => d.go === r); if(def) $('#fade').style.background = def.col;
+    setTimeout(() => tweenTo(ZOOM, 760, () => {
+      $('#fade').classList.add('on');
+      setTimeout(() => { location.hash = '#/' + r; room.busy = false; }, 280);
+    }), 150);
+  }
+  room.go = go;
+  room.back = () => { cam.pos.copy(ZOOM.pos); cam.look.copy(ZOOM.look); cam.fov = ZOOM.fov; settled = false; tweenTo(HOME, 1000, () => { settled = true; }); };
+  room.intro = () => { if(document.body.dataset.route === 'room') tweenTo(HOME, 1500, () => { settled = true; }); };
+  room.select = i => { $$('.key').forEach((k, j) => k.classList.toggle('sel', j === i)); const k = $$('.key')[i]; if(k) k.dispatchEvent(new Event('bubbles')); Sound.blip(520 + i*80, .07, .03); };
+
+  /* ---- loop ---- */
+  const clock = new THREE.Clock();
+  let mcAcc = 0, pw = 0, blinkT = 3, blink = 0;
+  const lookV = new THREE.Vector3();
+  spawnDrop(-5.5, 1.5); spawnDrop(6, -1);
+  updateBlob(0);
+  function frame(){
+    requestAnimationFrame(frame);
+    if(!running) return;
+    const dt = Math.min(clock.getDelta(), .05), t = clock.elapsedTime;
+
+    stepDrops(dt, t);
+    mcAcc += dt; if(mcAcc > 1/30){ mcAcc = 0; updateBlob(t); }
+    tNow = t; floorMat.uniforms.uTime.value = t; kelpMat.uniforms.uTime.value = t;
+    bubbleLayers.forEach(L => {
+      const a = L.g.attributes.position;
+      for(let i = 0; i < L.n; i++){
+        let y = a.getY(i) + dt*L.sp*(.7 + (i%5)*.14); a.setX(i, a.getX(i) + Math.sin(t*.9 + i*1.3)*dt*.35); if(y > 13) y = 0; a.setY(i, y);
+      }
+      a.needsUpdate = true;
+    });
+    shafts.forEach((m, i) => { m.material.opacity = .13 + .08*Math.sin(t*.5 + i*1.7); m.rotation.z = .32 + Math.sin(t*.2 + i)*.05; });
+
+    // face follows the nearest droplet; the jellyfish bobs and the mouth gulps
+    { const bob = bobOf(t); mc.position.y = BY + bob; blobHit.position.y = BY + bob; eyes.position.set(0, BY + bob, pulse*.05);
+      updateTentacles(t, bob); stepBurps(dt); snapFace(dt);
+      let tx = 0, ty = 0;
+      const nearest = drops.filter(d => d.state === 'walk').sort((a, b) => Math.hypot(a.x, a.z) - Math.hypot(b.x, b.z))[0];
+      if(nearest){ lookV.set(nearest.x, nearest.y - BY, nearest.z); } else { lookV.set(ptr.x*6, 0, 8); }
+      tx = Math.max(-1, Math.min(1, lookV.x/Math.max(2, Math.abs(lookV.z) + 2))); ty = Math.max(-1, Math.min(1, lookV.y/4));
+      blinkT -= dt; if(blinkT < 0){ blink = .13; blinkT = 2.8 + Math.random()*2.4; } blink = Math.max(0, blink - dt);
+      eyeParts.forEach(e => {
+        e.p.position.x += (tx*.13 - e.p.position.x)*.15; e.p.position.y += (ty*.1 - e.p.position.y)*.15;
+        e.g.scale.y = blink > 0 ? .12 : 1 + pulse*.15;
+      });
+      gulp *= Math.exp(-dt*2.6);
+      const open = Math.max(gulp, Math.min(1, Math.abs(boopX)*.8)), wig = Math.sin(t*3)*.01;
+      smile.visible = open < .35; smile.scale.set(1 + wig*3, 1, 1); smile.position.y = .0 + wig;
+      maw.scale.set(.2 + open*.1, .01 + open*.2, .08 + open*.03);
+      tongue.visible = open > .25; tongue.scale.set(.1, .01 + open*.08, .05); }
+
+    if(tw){
+      const k = Math.min(1, (performance.now() - tw.t0)/tw.dur), e = ease(k);
+      cam.pos.lerpVectors(tw.fp, tw.to.pos, e); cam.look.lerpVectors(tw.fl, tw.to.look, e);
+      cam.fov = tw.ff + (tw.to.fov - tw.ff)*e;
+      if(k >= 1){ const d = tw.done; tw = null; d && d(); }
+    } else if(settled){ cam.pos.copy(HOME.pos); cam.look.copy(HOME.look); cam.fov = HOME.fov; }
+    pw += (((settled && !tw) ? 1 : 0) - pw)*.05;
+    ptr.sx += (ptr.x - ptr.sx)*.04; ptr.sy += (ptr.y - ptr.sy)*.04;
+    camera.position.set(cam.pos.x + ptr.sx*.6*pw, cam.pos.y - ptr.sy*.3*pw, cam.pos.z);
+    camera.lookAt(cam.look);
+    if(camera.fov !== cam.fov){ camera.fov = cam.fov; camera.updateProjectionMatrix(); }
+    renderer.render(scene, camera);
+  }
+  frame();
+  sceneReady = true;
+}
+buildRoom().catch(err => { console.error(err); sceneReady = true; document.body.classList.add('no3d'); });
+
+(function hideCover(){
+  const el = performance.now() - coverStart;
+  if((sceneReady && el > 900) || el > 1800){
+    $('#cover').classList.add('off'); setTimeout(() => $('#cover').remove(), 600);
+    room.intro();
+    return;
+  }
+  requestAnimationFrame(hideCover);
+})();
+
+/* ================= ROUTER + KEYS ================= */
+const ROUTES = ['absorb','vote','how','board','p'];
+let prevRoute = null;
+function route(){
+  const r = location.hash.replace(/^#\/?/, '').split(/[?/]/)[0];
+  const on = ROUTES.includes(r);
+  document.body.dataset.route = on ? r : 'room';
+  $$('.page').forEach(p => p.classList.toggle('on', p.dataset.page === r));
+  $('#chrome').classList.toggle('on', on);
+  $$('#nav a').forEach(a => a.classList.toggle('on', a.dataset.r === r));
+  running = !on;
+  if(on){
+    $('#page-' + r).scrollTop = 0;
+    setTimeout(() => $('#fade').classList.remove('on'), 420);
+  } else {
+    $('#fade').classList.remove('on');
+    if(prevRoute && prevRoute !== 'room') room.back();
+  }
+  prevRoute = on ? r : 'room';
+  if(r === 'vote' || r === 'board' || r === 'p') renderBoard();
+}
+addEventListener('hashchange', route);
+/* In-app previews and embedded frames can mishandle plain #links, so route every internal link by script. */
+document.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('a[href^="#"]');
+  if(!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || a.target === '_blank') return;
+  const h = a.getAttribute('href'); e.preventDefault();
+  if(location.hash === h || (h === '#/' && !location.hash)){ route(); return; }
+  location.hash = h;
+  setTimeout(route, 60);
+});
+$$('.key').forEach(k => {
+  k.addEventListener('click', () => room.go(k.dataset.go));
+  const pop = () => {
+    for(let i = 0; i < 7; i++){
+      const b = document.createElement('i'); b.className = 'pop';
+      b.style.cssText = `--s:${5 + Math.random()*11}px;--x:${15 + Math.random()*75}%;--dx:${(Math.random() - .3)*40}px;--dy:${-(30 + Math.random()*46)}px;animation-delay:${i*55}ms`;
+      k.appendChild(b); b.addEventListener('animationend', () => b.remove());
+    }
+  };
+  k.addEventListener('pointerenter', pop); k.addEventListener('focus', pop); k.addEventListener('bubbles', pop);
+});
+$$('.page').forEach(p => {
+  const sea = document.createElement('div'); sea.className = 'sea'; sea.setAttribute('aria-hidden', 'true');
+  for(let i = 0; i < 16; i++){
+    const b = document.createElement('i');
+    b.style.cssText = `--s:${8 + Math.random()*36}px;left:${Math.random()*100}%;animation-duration:${10 + Math.random()*14}s;animation-delay:${-Math.random()*22}s`;
+    sea.appendChild(b);
+  }
+  p.prepend(sea);
+});
+let sel = -1;
+addEventListener('keydown', e => {
+  const tag = (e.target.tagName || '').toLowerCase();
+  if(tag === 'input' || tag === 'textarea'){ if(e.key === 'Escape') e.target.blur(); return; }
+  if(e.key === 'Escape'){ location.hash = '#/'; return; }
+  if(document.body.dataset.route !== 'room') return;
+  if(e.key === 'ArrowDown' || e.key === 'ArrowRight'){ e.preventDefault(); sel = (sel + 1) % KEYDEFS.length; room.select(sel); }
+  else if(e.key === 'ArrowUp' || e.key === 'ArrowLeft'){ e.preventDefault(); sel = sel < 1 ? KEYDEFS.length - 1 : sel - 1; room.select(sel); }
+  else if(e.key === 'Enter' && sel >= 0){ room.go(KEYDEFS[sel].go); }
+  else if(/^[1-5]$/.test(e.key)){ room.go(KEYDEFS[+e.key - 1].go); }
+});
+
+/* ================= WALLET (Phantom, Solflare, Backpack, Coinbase, Trust) ================= */
+const WALLETS = [
+  { id: 'phantom',  name: 'Phantom',  col: '#ab9ff2', url: 'https://phantom.app/download',  get: () => window.phantom?.solana?.isPhantom ? window.phantom.solana : (window.solana?.isPhantom ? window.solana : null) },
+  { id: 'solflare', name: 'Solflare', col: '#fc9b1a', url: 'https://solflare.com/download', get: () => window.solflare?.isSolflare ? window.solflare : null },
+  { id: 'backpack', name: 'Backpack', col: '#e33e3f', url: 'https://backpack.app/downloads', get: () => window.backpack?.isBackpack ? window.backpack : (window.xnft?.solana || null) },
+  { id: 'coinbase', name: 'Coinbase Wallet', col: '#3b6cf6', url: 'https://www.coinbase.com/wallet/downloads', get: () => window.coinbaseSolana || null },
+  { id: 'trust',    name: 'Trust Wallet', col: '#2e8ef7', url: 'https://trustwallet.com/download', get: () => window.trustwallet?.solana || null }
+];
+let wallet = store.get('absorb-wallet', null);   // { addr, id }
+let wProv = null;
+const walletDef = id => WALLETS.find(w => w.id === id);
+function paintWallet(){
+  const b = $('#wallet');
+  b.textContent = wallet ? short(wallet.addr) : 'Connect wallet';
+  b.classList.toggle('on', !!wallet);
+}
+function bindProvider(prov){
+  if(prov.__absorbBound) return; prov.__absorbBound = true;
+  prov.on?.('accountChanged', pk => {
+    if(pk){ wallet = { ...wallet, addr: pk.toString() }; store.set('absorb-wallet', wallet); }
+    else { wallet = null; store.set('absorb-wallet', null); }
+    paintWallet(); renderBoard();
+  });
+  prov.on?.('disconnect', () => { wallet = null; store.set('absorb-wallet', null); paintWallet(); renderBoard(); });
+}
+async function connectWith(def){
+  const prov = def.get();
+  if(!prov){ window.open(def.url, '_blank', 'noopener'); toast(`${def.name} isn’t installed. Opening its download page.`); return null; }
+  try{
+    const r = await prov.connect();
+    const pk = r?.publicKey || prov.publicKey;
+    if(!pk) throw new Error('no key');
+    wallet = { addr: pk.toString(), id: def.id }; wProv = prov; bindProvider(prov);
+    store.set('absorb-wallet', wallet); paintWallet(); renderBoard(); closeWalletModal(); toast(`${def.name} connected.`);
+    return wallet;
+  }catch(e){ toast(e?.code === 4001 || /reject|denied|cancel/i.test(e?.message || '') ? 'Connection cancelled.' : `Couldn’t connect ${def.name}.`); return null; }
+}
+let wmResolve = null;
+function closeWalletModal(){ $('#wm').classList.remove('on'); if(wmResolve){ wmResolve(wallet); wmResolve = null; } }
+function openWalletModal(){
+  const list = $('#wmList');
+  list.innerHTML = WALLETS.map(w => {
+    const on = !!w.get();
+    return `<button class="wm__b" data-w="${w.id}"><i style="background:${w.col}"></i><span>${w.name}</span><em>${on ? 'Detected' : 'Install'}</em></button>`;
+  }).join('');
+  $('#wm').classList.add('on');
+  return new Promise(res => { wmResolve = res; });
+}
+$('#wmList').addEventListener('click', e => { const b = e.target.closest('[data-w]'); if(b) connectWith(walletDef(b.dataset.w)); });
+$('#wmClose').addEventListener('click', closeWalletModal);
+$('#wm').addEventListener('click', e => { if(e.target.id === 'wm') closeWalletModal(); });
+async function connect(){ if(wallet && wProv) return wallet; return openWalletModal(); }
+async function activeProvider(){
+  if(wProv) return wProv;
+  const def = wallet && walletDef(wallet.id); const prov = def?.get();
+  if(prov){ try{ await prov.connect({ onlyIfTrusted: true }); }catch(e){} wProv = prov; bindProvider(prov); }
+  return wProv;
+}
+async function signAction(text){
+  const prov = await activeProvider();
+  if(!prov?.signMessage) throw new Error('This wallet can’t sign messages.');
+  const r = await prov.signMessage(new TextEncoder().encode(text), 'utf8');
+  return r;
+}
+$('#wallet').addEventListener('click', async () => {
+  if(wallet){
+    try{ const pr = await activeProvider(); await pr?.disconnect?.(); }catch(e){}
+    wallet = null; wProv = null; store.set('absorb-wallet', null); paintWallet(); renderBoard(); toast('Disconnected.'); return;
+  }
+  openWalletModal();
+});
+/* restore an earlier session quietly (only if the wallet already trusts this site) */
+addEventListener('load', async () => {
+  if(!wallet){ paintWallet(); return; }
+  const def = walletDef(wallet.id); const prov = def?.get();
+  if(!prov){ wallet = null; store.set('absorb-wallet', null); paintWallet(); return; }
+  try{ const r = await prov.connect({ onlyIfTrusted: true }); wallet = { addr: (r?.publicKey || prov.publicKey).toString(), id: def.id }; wProv = prov; bindProvider(prov); }
+  catch(e){ wallet = null; store.set('absorb-wallet', null); }
+  paintWallet(); renderBoard();
+});
+paintWallet();
+
+/* ================= ABSORB TOOL ================= */
+const fmtUsd = n => {
+  if(!isFinite(n)) return '—';
+  const a = Math.abs(n);
+  if(a >= 1e9) return '$' + (n/1e9).toFixed(2) + 'B';
+  if(a >= 1e6) return '$' + (n/1e6).toFixed(2) + 'M';
+  if(a >= 1e3) return '$' + (n/1e3).toFixed(1) + 'K';
+  if(a >= 1) return '$' + n.toFixed(2);
+  return '$' + n.toPrecision(3);
+};
+const fmtNum = n => !isFinite(n) ? '—' : n >= 1000 ? n.toLocaleString('en-US', { maximumFractionDigits: 0 }) : n >= 1 ? n.toLocaleString('en-US', { maximumFractionDigits: 4 }) : n.toPrecision(4);
+const fmtPct = (n, d = 2) => (n*100).toFixed(d) + '%';
+const isCA = s => /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(s);
+
+async function fetchToken(ca){
+  const r = await fetch('https://api.dexscreener.com/latest/dex/tokens/' + ca);
+  if(!r.ok) throw new Error('Market data didn’t load. Try again.');
+  const j = await r.json();
+  const pairs = (j.pairs || []).filter(p => p.chainId === 'solana' && p.baseToken?.address === ca);
+  if(!pairs.length) throw new Error(`No Solana market found for ${short(ca)}.`);
+  pairs.sort((a, b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0));
+  const p = pairs[0], price = parseFloat(p.priceUsd), mc = p.marketCap || p.fdv;
+  return { ca, price, mc, name: p.baseToken.name, symbol: p.baseToken.symbol,
+    liq: pairs.reduce((s, x) => s + (x.liquidity?.usd || 0), 0), vol: pairs.reduce((s, x) => s + (x.volume?.h24 || 0), 0),
+    chg: p.priceChange?.h24, img: p.info?.imageUrl || '' };
+}
+function computeTerms(T, Hs, disc, vestDays){
+  const supplyH = Hs.mc/Hs.price, valueIn = T.mc*(1 - disc), newTokens = valueIn/Hs.price, ratio = T.price*(1 - disc)/Hs.price;
+  const dilution = newTokens/(supplyH + newTokens), gate = T.mc/Hs.mc, liqAfter = Hs.liq + T.liq, mcAfter = Hs.mc + valueIn;
+  const unlockPct = vestDays > 0 ? CFG.dayOneUnlock : 1;
+  return { supplyH, valueIn, newTokens, ratio, dilution, gate, liqAfter, mcAfter, unlockPct, vestDays,
+    dayOneSell: (valueIn*unlockPct)/liqAfter, depthBefore: Hs.liq/Hs.mc, depthAfter: liqAfter/mcAfter, gateOk: gate <= CFG.sizeGate };
+}
+function coinCard(c, role, extra){
+  const chg = isFinite(c.chg) ? `<b style="color:${c.chg >= 0 ? 'var(--okt)' : 'var(--badt)'}">${c.chg >= 0 ? '+' : ''}${c.chg.toFixed(1)}%</b>` : '<b>—</b>';
+  const img = c.img ? `style="background-image:url('${esc(c.img)}')"` : '';
+  return `<span class="tag ${role === 'host' ? 'tag--host' : ''}">${role === 'host' ? 'Host' : 'Target'}</span>
+    <div class="coin__top"><div class="coin__img" ${img}>${c.img ? '' : esc((c.symbol || '?')[0])}</div>
+    <div style="min-width:0"><div class="coin__name">${esc(c.name)}</div><div class="coin__tick">$${esc(c.symbol)} · ${short(c.ca)}</div></div></div>
+    <div class="kv"><span>Market cap</span><b>${fmtUsd(c.mc)}</b></div>
+    <div class="kv"><span>Liquidity</span><b>${fmtUsd(c.liq)}</b></div>
+    <div class="kv"><span>24h volume</span><b>${fmtUsd(c.vol)}</b></div>
+    <div class="kv"><span>24h</span>${chg}</div>
+    <div class="kv"><span>${extra[0]}</span><b>${extra[1]}</b></div>`;
+}
+function vizSvg(T, Hs){
+  const rh = 56, rt = Math.max(10, Math.min(30, 56*Math.sqrt(T.mc/Hs.mc)*1.4));
+  return `<g filter="url(#goo)" fill="#38c6e6"><circle cx="255" cy="100" r="${rh}"/>
+    <circle cx="70" cy="100" r="${rt}"><animate attributeName="cx" values="70;198;198;70" keyTimes="0;.5;.78;1" dur="4.4s" repeatCount="indefinite" calcMode="spline" keySplines=".6 0 .2 1;0 0 1 1;.6 0 .2 1"/><animate attributeName="r" values="${rt};${rt*.6};0;${rt}" keyTimes="0;.5;.78;1" dur="4.4s" repeatCount="indefinite"/></circle></g>`;
+}
+let coins = null, lastTerms = null;
+function setFlow(n){ $$('#flow li').forEach((li, i) => { li.classList.toggle('done', i + 1 < n); li.classList.toggle('on', i + 1 === n); }); }
+function paintTerms(){
+  if(!coins) return;
+  const disc = +$('#disc').value/100, vest = +$('#vest').value;
+  const { T, H: Hs } = coins;
+  const x = computeTerms(T, Hs, disc, vest);
+  lastTerms = { ...x, disc };
+  $('#coinT').innerHTML = coinCard(T, 'target', ['Share of host', fmtPct(x.gate)]);
+  $('#coinH').innerHTML = coinCard(Hs, 'host', ['Dilution from absorb', fmtPct(x.dilution)]);
+  $('#viz').innerHTML = vizSvg(T, Hs);
+  $('#vizCap').textContent = `$${T.symbol} → $${Hs.symbol}`;
+  $('#out').innerHTML = `
+    <div><div class="out__k">Host mc after</div><div class="out__v">${fmtUsd(x.mcAfter)}</div><div class="out__s">was ${fmtUsd(Hs.mc)}</div></div>
+    <div><div class="out__k">Host liquidity after</div><div class="out__v">${fmtUsd(x.liqAfter)}</div><div class="out__s">+${fmtUsd(T.liq)} rescued</div></div>
+    <div><div class="out__k">Pool depth</div><div class="out__v">${fmtPct(x.depthAfter, 1)}</div><div class="out__s">of mc · was ${fmtPct(x.depthBefore, 1)}</div></div>
+    <div><div class="out__k">Day-one sell pressure</div><div class="out__v">${fmtPct(x.dayOneSell, 1)}</div><div class="out__s">of host liquidity, max</div></div>`;
+  $('#terms').innerHTML = `
+    <div class="terms__r"><span>1 $${esc(T.symbol)} becomes</span><b>${fmtNum(x.ratio)} $${esc(Hs.symbol)}</b></div>
+    <div class="terms__r"><span>Target holders receive</span><b>${fmtNum(x.newTokens)} $${esc(Hs.symbol)}</b></div>
+    <div class="terms__r"><span>Swap discount</span><b>${(disc*100).toFixed(0)}%</b></div>
+    <div class="terms__r"><span>Unlocked at execution</span><b>${fmtPct(x.unlockPct, 0)}</b></div>
+    <div class="terms__r"><span>Remainder vests over</span><b>${vest > 0 ? vest + ' days' : 'n/a (fully unlocked)'}</b></div>
+    <div class="terms__r"><span>Host dev earns</span><b>${fmtPct(CFG.hostFeeShare, 0)} of target creator fees</b></div>`;
+  const g = $('#gate');
+  g.className = 'gate' + (x.gateOk ? '' : ' bad');
+  g.innerHTML = x.gateOk
+    ? `<i></i><span>Size gate passed. Target is ${fmtPct(x.gate, 1)} of the host's market cap (max ${fmtPct(CFG.sizeGate, 0)}).</span>`
+    : `<i></i><span>Size gate failed. Target is ${fmtPct(x.gate, 1)} of the host's market cap, above the ${fmtPct(CFG.sizeGate, 0)} limit. Swap the order or pick a larger host.</span>`;
+  $('#proposeBtn').disabled = !x.gateOk;
+  $('#res').classList.add('on'); $('#ph').style.display = 'none'; setFlow(2);
+}
+$('#disc').addEventListener('input', e => { $('#discV').textContent = e.target.value + '%'; paintTerms(); });
+$('#vest').addEventListener('input', e => { $('#vestV').textContent = e.target.value + ' days'; paintTerms(); });
+async function calc(){
+  const a = $('#caT').value.trim(), b = $('#caH').value.trim();
+  const m = $('#msg'); m.className = 'msg'; $('#pMsg').textContent = '';
+  if(!isCA(a) || !isCA(b)){ m.className = 'msg err'; m.textContent = 'Paste two valid Solana contract addresses.'; return; }
+  if(a === b){ m.className = 'msg err'; m.textContent = 'Target and host are the same coin.'; return; }
+  m.textContent = 'Pulling market data…'; $('#calcBtn').disabled = true;
+  try{
+    const [T, Hs] = await Promise.all([fetchToken(a), fetchToken(b)]);
+    if(!T.mc || !Hs.mc) throw new Error('Market cap missing for one of these coins.');
+    coins = { T, H: Hs }; paintTerms();
+    m.className = 'msg ok'; m.textContent = 'Live terms. The final ratio is snapshotted when the absorption executes.'; Sound.chime();
+  }catch(err){ m.className = 'msg err'; m.textContent = err.message; }
+  $('#calcBtn').disabled = false;
+}
+$('#calcBtn').addEventListener('click', calc);
+$('#form').addEventListener('submit', e => { e.preventDefault(); calc(); });
+['#caT', '#caH'].forEach(s => $(s).addEventListener('keydown', e => { if(e.key === 'Enter'){ e.preventDefault(); calc(); } }));
+$('#swapBtn').addEventListener('click', () => {
+  const a = $('#caT').value; $('#caT').value = $('#caH').value; $('#caH').value = a;
+  if(coins){ coins = { T: coins.H, H: coins.T }; paintTerms(); }
+});
+
+/* ================= ON-CHAIN READS (Solana RPC) ================= */
+const RPC = CFG.rpc || 'https://api.mainnet-beta.solana.com';
+async function rpc(method, params){
+  const r = await fetch(RPC, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }) });
+  if(!r.ok) throw new Error('Solana RPC is busy. Try again in a moment.');
+  const j = await r.json(); if(j.error) throw new Error(j.error.message || 'Solana RPC error.');
+  return j.result;
+}
+async function tokenSupply(mint){ const r = await rpc('getTokenSupply', [mint]); return +r.value.uiAmount || 0; }
+async function tokenBalance(owner, mint){
+  let r;
+  try{ r = await rpc('getTokenAccountsByOwner', [owner, { mint }, { encoding: 'jsonParsed' }]); }
+  catch(e){ throw new Error('Couldn’t verify your balance for this coin. Try again.'); }
+  return (r.value || []).reduce((s, a) => s + (+a.account.data.parsed.info.tokenAmount.uiAmount || 0), 0);
+}
+
+/* ================= PROPOSALS (stored in this browser; mirrored to CFG.api when set) ================= */
+const QUORUM = CFG.quorum ?? .05, DAY = 86400000;
+let proposals = store.get('absorb-proposals', []);
+if(!Array.isArray(proposals)) proposals = [];
+proposals = proposals.filter(p => !p.demo);
+if(!store.get('absorb-seeded', false)){
+  const H = 3600000, now = Date.now(), SUP = 1e9;
+  const C = (ca, name, symbol, mc, liq, price) => ({ ca, name, symbol, mc, liq, price, img: '', supply: SUP });
+  const P = (id, t, h, disc, vest, startAgo, tv, hv, status) => ({ id, target: t, host: h, disc, vest, createdAt: now - startAgo, endsAt: now - startAgo + DAY,
+    proposer: 'Fh3k' + id.toString(36).padEnd(36, 'x').slice(0, 36) + 'q9Zp', votes: { target: { yes: tv[0], no: tv[1] }, host: { yes: hv[0], no: hv[1] } }, voted: {}, status,
+    ...(status === 'open' ? {} : { resolvedAt: now - startAgo + DAY }) });
+  proposals = [
+    P(1001, C('Dr4gN1nj4Fr0gC01nTargetMint111111111111111111', 'Dead Frog', 'DFROG', 84000, 6200, .000084), C('PCatLiv1ngHostM1ntAddr2222222222222222222222', 'Pump Cat', 'PCAT', 1900000, 212000, .0019), .2, 7, 9*H, [88e6, 31e6], [102e6, 44e6], 'open'),
+    P(1002, C('SkuIlInuTargetM1ntAddr333333333333333333333', 'Skull Inu', 'SKULL', 41000, 3100, .000041), C('M00nM0gHostM1ntAddr44444444444444444444444', 'Moon Mog', 'MMOG', 620000, 98000, .00062), .25, 10, 19*H, [64e6, 52e6], [71e6, 39e6], 'open'),
+    P(1003, C('R1ngB3llTargetM1ntAddr55555555555555555555', 'Ring Bell', 'RING', 52000, 4400, .000052), C('W1fHatHostM1ntAddr666666666666666666666666', 'Hat Dog', 'WIF2', 2400000, 310000, .0024), .15, 5, 52*H, [140e6, 22e6], [190e6, 41e6], 'absorbed'),
+    P(1004, C('B0nkJrTargetM1ntAddr7777777777777777777777', 'Bonk Jr', 'BONKJR', 97000, 8100, .000097), C('G1gaChadHostM1ntAddr88888888888888888888', 'Giga Chad', 'GCHAD', 3100000, 420000, .0031), .2, 7, 120*H, [160e6, 48e6], [230e6, 77e6], 'absorbed'),
+    P(1005, C('PepeSn0wTargetM1ntAddr99999999999999999999', 'Pepe Snow', 'PSNOW', 33000, 2500, .000033), C('F1reF1shHostM1ntAddr000000000000000000000', 'Fire Fish', 'FFISH', 880000, 120000, .00088), .3, 14, 200*H, [90e6, 38e6], [26e6, 71e6], 'rejected')
+  ];
+  store.set('absorb-proposals', proposals); store.set('absorb-seeded', true);
+}
+const snap = c => ({ ca: c.ca, name: c.name, symbol: c.symbol, mc: c.mc, liq: c.liq, price: c.price, img: c.img || '', supply: c.supply || 0 });
+const save = () => store.set('absorb-proposals', proposals);
+const post = (path, body) => CFG.api ? fetch(CFG.api.replace(/\/$/, '') + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }) : Promise.resolve({ ok: true });
+
+$('#proposeBtn').addEventListener('click', async () => {
+  const m = $('#pMsg'); m.className = 'msg'; m.style.margin = '0';
+  if(!lastTerms || !coins) return;
+  if(!lastTerms.gateOk){ m.className = 'msg err'; m.textContent = 'Size gate failed.'; return; }
+  if(!wallet){ const w = await connect(); if(!w) return; }
+  if(proposals.some(p => p.status === 'open' && p.target.ca === coins.T.ca)){ m.className = 'msg err'; m.textContent = 'That coin already has an open absorption vote.'; return; }
+  m.textContent = 'Reading token supply…';
+  try{
+    const [ts, hs] = await Promise.all([tokenSupply(coins.T.ca), tokenSupply(coins.H.ca)]);
+    const now = Date.now();
+    const p = {
+      id: now, target: snap({ ...coins.T, supply: ts }), host: snap({ ...coins.H, supply: hs }), disc: lastTerms.disc, vest: lastTerms.vestDays,
+      createdAt: now, endsAt: now + DAY, proposer: wallet.addr,
+      votes: { target: { yes: 0, no: 0 }, host: { yes: 0, no: 0 } }, voted: {}, status: 'open'
+    };
+    m.textContent = 'Approve the signature in your wallet…';
+    p.sig = Array.from(await signAction(`Absorb: propose $${p.target.symbol} (${p.target.ca}) into $${p.host.symbol} (${p.host.ca}). Discount ${(p.disc*100).toFixed(0)}%, vest ${p.vest} days. ${new Date(now).toISOString()}`).then(r => r.signature || r)).slice(0, 64);
+    const r = await post('/proposals', p); if(!r.ok) throw new Error('Request failed.');
+    proposals.unshift(p); save(); renderBoard(); setFlow(3);
+    m.className = 'msg ok'; m.innerHTML = 'Proposed. The vote is open for 24 hours. <a href="#/vote" style="text-decoration:underline">View it</a>';
+    Sound.chime(); toast('Absorption proposed.');
+  }catch(err){ m.className = 'msg err'; m.textContent = err?.code === 4001 ? 'Signature cancelled.' : (err.message || 'Something went wrong. Try again.'); }
+});
+
+/* ================= VOTE + BOARD ================= */
+let tab = 'absorbed';
+const pct = (a, b) => (a + b) ? a/(a + b) : 0;
+function clock(ms){
+  if(ms <= 0) return '00:00:00';
+  const s = Math.floor(ms/1000);
+  return [Math.floor(s/3600), Math.floor(s%3600/60), s%60].map(n => String(n).padStart(2, '0')).join(':');
+}
+function vesselHtml(p, side){
+  const v = p.votes[side], coin = side === 'target' ? p.target : p.host;
+  const y = pct(v.yes, v.no), cast = v.yes + v.no, q = coin.supply ? cast/coin.supply : 0, qf = Math.min(1, q/QUORUM);
+  const key = wallet ? wallet.addr + side : '', did = key && p.voted[key];
+  let controls = '';
+  if(p.status === 'open'){
+    controls = `<div class="vessel__c"><span>${wallet ? (did ? 'You voted ' + did + ' · ' + fmtNum(p.voted[key + ':w'] || 0) + ' votes' : 'Hold $' + esc(coin.symbol) + ' to vote') : 'Connect to vote'}</span>
+      <div class="vbtns"><button class="btn btn--g btn--s" data-vote="${p.id}|${side}|yes" ${did ? 'disabled' : ''}>Yes</button><button class="btn btn--g btn--s" data-vote="${p.id}|${side}|no" ${did ? 'disabled' : ''}>No</button></div></div>`;
+  }
+  return `<div class="vessel"><span class="vessel__tag">${side === 'target' ? 'Target' : 'Host'} holders</span>
+    <div class="vessel__bowl" style="--h:${(y*100).toFixed(1)}%"><div class="vessel__w"></div><div class="vessel__v"><b>${fmtPct(y, 0)}</b><span>yes</span></div></div>
+    <div class="vessel__sym">$${esc(coin.symbol)}</div>
+    <div class="vessel__q" title="Quorum"><i style="width:${(qf*100).toFixed(0)}%"></i></div>
+    <div class="vessel__m">Quorum ${fmtPct(qf, 0)} of ${fmtPct(QUORUM, 0)} supply · ${fmtNum(cast)} votes</div>${controls}</div>`;
+}
+function resolvedFoot(p){
+  return `<span>${p.status === 'absorbed' ? `$${esc(p.target.symbol)} is now absorbed into $${esc(p.host.symbol)}.` : 'Not enough support on both sides.'}</span><span>${new Date(p.resolvedAt || p.endsAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</span>`;
+}
+function statusBadge(p){
+  return p.status === 'absorbed' ? '<span class="badge ok">Absorbed</span>' : p.status === 'rejected' ? '<span class="badge bad">Rejected</span>' : '<span class="badge">Voting</span>';
+}
+function voteHtml(p, full){
+  const foot = p.status === 'open'
+    ? `<span>Ends in <span class="clock" data-end="${p.endsAt}">${clock(p.endsAt - Date.now())}</span></span><span>Proposed by ${short(p.proposer)}</span>`
+    : resolvedFoot(p);
+  return `<article class="prop tide__item"><div class="tide__top"><div class="prop__t">$${esc(p.target.symbol)}<span>→</span>$${esc(p.host.symbol)}</div>${statusBadge(p)}</div>
+    <div class="prop__m">${esc(p.target.name)} into ${esc(p.host.name)} · ${fmtUsd(p.target.mc)} into ${fmtUsd(p.host.mc)}</div>
+    <div class="tide__pair">${vesselHtml(p, 'target')}<div class="tide__mid"><b>≋</b><span>${(p.disc*100).toFixed(0)}% off</span><span>${p.vest}d vest</span></div>${vesselHtml(p, 'host')}</div>
+    <div class="prop__f">${foot}</div>
+    <div class="prop__f act2"><button class="btn btn--g btn--s" data-share="${p.id}">Share on X</button><button class="btn btn--g btn--s" data-copy="${p.id}">Copy link</button>${full ? '' : `<a class="btn btn--g btn--s" href="#/p/${p.id}">Open</a>`}</div></article>`;
+}
+const hueOf = str => { let h = 0; for(const c of String(str)) h = (h*31 + c.charCodeAt(0)) % 360; return h; };
+function pearlHtml(p){
+  const t = p.target, h = p.host, d = new Date(p.resolvedAt || p.endsAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  const orb = c => `<i style="--h:${hueOf(c.symbol)}">${esc((c.symbol || '?')[0])}</i>`;
+  return `<article class="pearl ${p.status}"><a class="pearl__link" href="#/p/${p.id}" aria-label="Open $${esc(t.symbol)} into $${esc(h.symbol)}">
+    <div class="pearl__orbs">${orb(t)}${orb(h)}</div>
+    <div class="pearl__t">$${esc(t.symbol)} <span>→</span> $${esc(h.symbol)}</div>
+    <div class="pearl__m">${p.status === 'absorbed' ? fmtUsd(t.liq || 0) + ' liquidity joined · ' : ''}${(p.disc*100).toFixed(0)}% discount · ${p.vest}d vest</div>
+    <div class="pearl__f">${statusBadge(p)}<span>${d}</span></div></a>
+    <div class="pearl__act"><button class="btn btn--g btn--s" data-share="${p.id}">Share</button><button class="btn btn--g btn--s" data-copy="${p.id}">Copy link</button></div></article>`;
+}
+function propHtml(p, full){ return voteHtml(p, full); }
+let boardReady = false;
+setTimeout(() => { boardReady = true; renderBoard(); }, 500);
+const linkFor = p => location.href.split('#')[0] + '#/p/' + p.id;
+function statsHtml(){
+  const ab = proposals.filter(p => p.status === 'absorbed'), op = proposals.filter(p => p.status === 'open');
+  const liq = ab.reduce((s, p) => s + (p.target.liq || 0), 0);
+  return `<div class="stat"><b>${ab.length}</b><span>coins absorbed</span></div><div class="stat"><b>${fmtUsd(liq)}</b><span>liquidity rescued</span></div><div class="stat"><b>${op.length}</b><span>votes open now</span></div>`;
+}
+function emptyHtml(title, sub){ return `<div class="empty"><b>${title}</b>${sub}<br><a class="btn btn--p" href="#/absorb"><span>Start an absorption</span><span class="ar">&rarr;</span></a></div>`; }
+function renderBoard(){
+  const skel = '<div class="skel"></div><div class="skel"></div>';
+  $('#ruleQ').textContent = fmtPct(QUORUM, 0) + ' of supply must vote';
+  $('#statsVote').innerHTML = $('#statsBoard').innerHTML = statsHtml();
+  const open = proposals.filter(p => p.status === 'open');
+  $('#listVote').innerHTML = !boardReady ? skel : open.length ? open.map(p => voteHtml(p)).join('') : emptyHtml('No open ripples right now', 'Every merge starts with a single drop. Be the first.');
+  $$('#tabs .tab').forEach(t => t.classList.toggle('on', t.dataset.t === tab));
+  const rows = proposals.filter(p => p.status === tab);
+  $('#listBoard').innerHTML = !boardReady ? skel : rows.length ? rows.map(p => pearlHtml(p)).join('') : (tab === 'absorbed' ? emptyHtml('Nothing has merged yet', 'Finished merges land in the pool.') : emptyHtml('No rejected proposals', 'Proposals that fail a vote show up here.'));
+  if(document.body.dataset.route === 'p'){
+    const id = location.hash.split('/')[2], p = proposals.find(x => String(x.id) === id);
+    $('#propBody').innerHTML = !boardReady ? skel : p ? propHtml(p, true) : emptyHtml('We can’t find that proposal', 'It may only exist in another browser.');
+  }
+}
+function resolve(p){
+  const ok = (s, c) => c.supply && (s.yes + s.no)/c.supply >= QUORUM && s.yes > s.no;
+  p.status = ok(p.votes.target, p.target) && ok(p.votes.host, p.host) ? 'absorbed' : 'rejected';
+  p.resolvedAt = Date.now(); save();
+  toast(p.status === 'absorbed' ? `$${p.target.symbol} was absorbed into $${p.host.symbol}.` : `Vote on $${p.target.symbol} failed.`);
+  if(p.status === 'absorbed') Sound.absorb();
+  renderBoard();
+}
+$('#tabs').addEventListener('click', e => { const b = e.target.closest('.tab'); if(!b) return; tab = b.dataset.t; renderBoard(); });
+let voting = false;
+let onListClick = async function(e){
+  const vb = e.target.closest('[data-vote]'); if(!vb || voting) return;
+  if(!wallet){ const w = await connect(); if(!w) return; }
+  const [id, side, choice] = vb.dataset.vote.split('|');
+  const p = proposals.find(x => x.id == id); if(!p || p.status !== 'open') return;
+  const coin = side === 'target' ? p.target : p.host, key = wallet.addr + side;
+  if(p.voted[key]){ toast('You already voted on this side.'); return; }
+  voting = true; vb.disabled = true;
+  try{
+    toast('Checking your balance…');
+    const bal = await tokenBalance(wallet.addr, coin.ca);
+    if(!(bal > 0)){ toast(`You don’t hold $${coin.symbol}, so you can’t vote on this side.`); return; }
+    await signAction(`Absorb vote: ${choice.toUpperCase()} on $${p.target.symbol} into $${p.host.symbol} as a ${side} holder (proposal ${p.id}).`);
+    if(p.status !== 'open') return;
+    p.votes[side][choice] += bal; p.voted[key] = choice; p.voted[key + ':w'] = bal; save();
+    post('/votes', { id: p.id, side, choice, addr: wallet.addr, weight: bal }).catch(() => {});
+    Sound.blip(); toast(`Voted ${choice} with ${fmtNum(bal)} $${coin.symbol}.`);
+  }catch(err){ toast(err?.code === 4001 ? 'Signature cancelled.' : (err.message || 'Vote failed.')); }
+  finally{ voting = false; renderBoard(); }
+};
+async function onShare(e){
+  const sh = e.target.closest('[data-share]'), cp = e.target.closest('[data-copy]');
+  const b = sh || cp; if(!b) return false;
+  const p = proposals.find(x => String(x.id) === (sh ? sh.dataset.share : cp.dataset.copy)); if(!p) return true;
+  if(sh){
+    const txt = p.status === 'absorbed' ? `$${p.target.symbol} was absorbed into $${p.host.symbol}. Nothing evaporates.` : `Vote now: absorb $${p.target.symbol} into $${p.host.symbol}. Holders of both coins decide.`;
+    window.open('https://x.com/intent/tweet?text=' + encodeURIComponent(txt) + '&url=' + encodeURIComponent(linkFor(p)), '_blank', 'noopener');
+  } else {
+    try{ await navigator.clipboard.writeText(linkFor(p)); toast('Link copied.'); }catch(err){ toast(linkFor(p)); }
+  }
+  return true;
+}
+const _vote = onListClick;
+onListClick = async function(e){ if(await onShare(e)) return; return _vote(e); };
+$('#propBody').addEventListener('click', e => onListClick(e));
+$('#listVote').addEventListener('click', onListClick);
+$('#listBoard').addEventListener('click', onListClick);
+
+setInterval(() => {
+  const now = Date.now();
+  $$('.clock[data-end]').forEach(el => el.textContent = clock(+el.dataset.end - now));
+  proposals.filter(p => p.status === 'open' && p.endsAt <= now).forEach(resolve);
+}, 1000);
+
+const footHtml = `<footer class="foot"><nav><a href="#/absorb">Drop in</a><a href="#/vote">Ripple</a><a href="#/how">How it works</a><a href="#/board">Pool</a><a href="${esc(CFG.x || 'https://x.com')}" target="_blank" rel="noopener">X</a><a href="#/">Deep</a></nav><span>Absorb · nothing evaporates</span>
+<p>Absorb is a community tool, not financial advice. Token migrations carry risk and new tokens can lose value. Only vote with coins you are comfortable holding.</p></footer>`;
+$$('.page .main').forEach(m => m.insertAdjacentHTML('beforeend', footHtml));
+
+renderBoard();
+route();
+</script>
+</body>
+</html>

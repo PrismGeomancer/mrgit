@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256"><defs>
+<linearGradient id="aq" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5df2e0"/><stop offset="1" stop-color="#0f9fc4"/></linearGradient>
+<linearGradient id="co" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff9aa6"/><stop offset="1" stop-color="#ff4d6a"/></linearGradient>
+<filter id="goo" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/><feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 24 -10"/></filter>
+</defs>
+<g filter="url(#goo)">
+  <ellipse cx="128" cy="204" rx="104" ry="36" fill="url(#aq)"/>
+  <circle cx="128" cy="166" r="30" fill="url(#aq)"/>
+  <path d="M128,48.2 C133.1,68.6 162,82.2 162,106 A34,34 0 0 1 94,106 C94,82.2 122.9,68.6 128,48.2 Z" fill="url(#co)"/>
+</g>
+<ellipse cx="116" cy="96" rx="6" ry="12" fill="#fff" opacity=".65" transform="rotate(16 116 96)"/>
+<ellipse cx="60" cy="196" rx="20" ry="6" fill="#fff" opacity=".4"/>
+<ellipse cx="128" cy="236" rx="70" ry="9" fill="none" stroke="#0f9fc4" stroke-width="5" opacity=".4"/>
+</svg>
